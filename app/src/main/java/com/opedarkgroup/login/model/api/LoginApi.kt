@@ -1,10 +1,12 @@
 package com.opedarkgroup.login.model.api
 
 import com.opedarkgroup.login.model.models.LoginResponse
-import retrofit2.http.GET
+import io.reactivex.Completable
+import retrofit2.http.Body
+import retrofit2.http.POST
 
 interface LoginApi {
 
-    @GET("login/GetLogin?usuario=alan.esteves&senha=1234")
-    suspend fun getLogin() : LoginResponse
+    @POST("/Login/Login")
+    fun getLogin(@Body loginResponse: LoginResponse) : Completable
 }

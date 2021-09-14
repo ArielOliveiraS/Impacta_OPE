@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val BASE_URL = "http://localhost:63718//"
+const val BASE_URL = "https://comanda-eletronica20210912162154.azurewebsites.net"
 
 class RetrofitService {
     companion object {
