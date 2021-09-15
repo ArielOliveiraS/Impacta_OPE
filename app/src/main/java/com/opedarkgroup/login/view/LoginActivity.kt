@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
 
             viewModel.loginResult.observe(this, Observer {
                 if (it) {
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                 } else {
                     Toast.makeText(applicationContext, "Login ou senha incorretos", Toast.LENGTH_SHORT).show()
                 }
