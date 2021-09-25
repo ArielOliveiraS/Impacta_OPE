@@ -1,3 +1,3 @@
-package com.opedarkgroup.login.model.models
+package com.opedarkgroup.data.models
 
 data class LoginResponse (val Usuario: String, val Senha: String)

@@ -1,4 +1,4 @@
-package com.opedarkgroup.login.model.api
+package com.opedarkgroup.data.api
 
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit

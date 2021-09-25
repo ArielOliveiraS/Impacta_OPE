@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Opedarkgroup">
         <activity
-            android:name=".mesas.MesasActivity"
+            android:name="com.opedarkgroup.features.mesas.view.MesasActivity"
             android:exported="true" />
         <activity
-            android:name=".consultapedido.view.MainActivity"
+            android:name="com.opedarkgroup.features.consultapedido.view.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".login.view.LoginActivity"
+            android:name="com.opedarkgroup.features.login.view.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

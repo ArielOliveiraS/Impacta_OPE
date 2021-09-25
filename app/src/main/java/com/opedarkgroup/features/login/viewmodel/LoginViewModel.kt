@@ -1,9 +1,9 @@
-package com.opedarkgroup.login.viewmodel
+package com.opedarkgroup.features.login.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.opedarkgroup.login.model.api.RetrofitService
-import com.opedarkgroup.login.model.models.LoginResponse
+import com.opedarkgroup.data.api.RetrofitService
+import com.opedarkgroup.data.models.LoginResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers

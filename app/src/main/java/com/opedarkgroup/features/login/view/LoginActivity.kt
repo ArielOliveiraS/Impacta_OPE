@@ -1,4 +1,4 @@
-package com.opedarkgroup.login.view
+package com.opedarkgroup.features.login.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.opedarkgroup.consultapedido.view.MainActivity
+import com.opedarkgroup.features.consultapedido.view.MainActivity
 import com.opedarkgroup.R
-import com.opedarkgroup.login.model.models.LoginResponse
-import com.opedarkgroup.login.viewmodel.LoginViewModel
+import com.opedarkgroup.data.models.LoginResponse
+import com.opedarkgroup.features.login.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.activity_login.*
 
 //alan.esteves -> 1234
