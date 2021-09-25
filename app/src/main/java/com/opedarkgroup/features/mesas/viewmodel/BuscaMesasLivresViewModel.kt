@@ -1,5 +1,6 @@
 package com.opedarkgroup.features.mesas.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.opedarkgroup.data.api.RetrofitService
@@ -22,8 +23,11 @@ class BuscaMesasLivresViewModel : ViewModel() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     buscarMesasLivresResult.value = it
+                    Log.i("teste", "sucesso")
                 }, { e ->
                     error.value = e.message
+                    Log.i("teste", e.message ?: "erro")
+
                 })
         )
     }

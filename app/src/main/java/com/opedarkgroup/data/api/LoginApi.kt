@@ -14,22 +14,22 @@ interface LoginApi {
     @POST("/Login/Login")
     fun getLogin(@Body loginResponse: LoginResponse) : Completable
 
-//    @GET("/Order/BuscarProdutos")
+//    @GET("/Order/BuscaProdutos")
 //    fun buscarProdutos() : Single<AlgumaCoisa>
 
-    @GET("/Order/BuscarMesasLivres")
+    @GET("/Order/BuscaMesasLivres")
     fun buscarMesasLivres() : Single<List<MesaResponse>>
 
-    @POST("/Order/AlternarStatusMesa")
-    fun alternarStatusMesa(@Body mesaResponse: MesaResponse) : Completable
+    @POST("/Order/AlteraStatusMesa")
+    fun alterarStatusMesa(@Body mesaResponse: MesaResponse) : Completable
 
-//    @GET("/Order/BuscarPedido")
+//    @GET("/Order/BuscaPedido")
 //    fun buscarPedido() : Single<List<AlgumaCoisa>>
 
-    @POST("/Order/AlternarStatusPedido")
-    fun alternarStatusPedido(@Body pedidoResponse: PedidoResponse) : Completable
+    @POST("/Order/AlteraStatusPedido")
+    fun alterarStatusPedido(@Body pedidoResponse: PedidoResponse) : Completable
 
-    @POST("/Order/AdicionarPedido")
+    @POST("/Order/AdicionaPedido")
     fun acicionarPedido(@Body pedidoResponse: PedidoResponse) : Completable
 
 }

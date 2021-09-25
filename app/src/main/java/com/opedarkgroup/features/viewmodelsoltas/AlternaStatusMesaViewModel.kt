@@ -16,7 +16,7 @@ class AlternaStatusMesaViewModel : ViewModel() {
 
     fun alternarStatusMesa(mesaResponse: MesaResponse) {
         disposable.add(
-            RetrofitService.service.alternarStatusMesa(mesaResponse)
+            RetrofitService.service.alterarStatusMesa(mesaResponse)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

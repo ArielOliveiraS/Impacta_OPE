@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.opedarkgroup.R
 import com.opedarkgroup.data.models.MesaResponse
@@ -23,7 +24,7 @@ class MesasActivity : AppCompatActivity() {
         MesaResponse(5, 5, 5))
 
 
-    private val adapter = MesasAdapter(lista)
+    private val adapter = MesasAdapter(list)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +37,7 @@ class MesasActivity : AppCompatActivity() {
 
         val viewModel = ViewModelProviders.of(this).get(BuscaMesasLivresViewModel::class.java)
         recyclerViewMesas.adapter = adapter
-        recyclerViewMesas.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerViewMesas.layoutManager = GridLayoutManager(this, 3)
 
         viewModel.buscarMesasLivres()
 
