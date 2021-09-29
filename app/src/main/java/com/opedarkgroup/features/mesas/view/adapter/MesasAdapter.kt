@@ -8,7 +8,7 @@ import com.opedarkgroup.R
 import com.opedarkgroup.data.models.MesaResponse
 import kotlinx.android.synthetic.main.item_mesa.view.*
 
-class MesasAdapter(var list: List<MesaResponse>):
+class MesasAdapter(var list: List<MesaResponse>, private val listener: ClickViewContract):
     RecyclerView.Adapter<MesasAdapter.ViewHolder>(){
 
 
@@ -22,8 +22,12 @@ class MesasAdapter(var list: List<MesaResponse>):
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val characters = list[position]
-        holder.onBind(characters)
+        val mesa = list[position]
+        holder.onBind(mesa)
+
+        holder.itemView.setOnClickListener {
+            listener.onClick(mesa.id_mesa_pk)
+        }
     }
 
     fun updateList(newList: List<MesaResponse>) {

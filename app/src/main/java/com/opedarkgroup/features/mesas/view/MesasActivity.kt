@@ -1,5 +1,6 @@
 package com.opedarkgroup.features.mesas.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -8,11 +9,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.opedarkgroup.R
 import com.opedarkgroup.data.models.MesaResponse
+import com.opedarkgroup.features.listapedidos.view.PedidosActivity
+import com.opedarkgroup.features.mesas.view.adapter.ClickViewContract
 import com.opedarkgroup.features.mesas.view.adapter.MesasAdapter
 import com.opedarkgroup.features.mesas.viewmodel.BuscaMesasLivresViewModel
 import kotlinx.android.synthetic.main.activity_mesas.*
 
-class MesasActivity : AppCompatActivity() {
+class MesasActivity : AppCompatActivity(), ClickViewContract {
 
     private val list = listOf<MesaResponse>()
 
@@ -24,7 +27,7 @@ class MesasActivity : AppCompatActivity() {
         MesaResponse(5, 5, 5))
 
 
-    private val adapter = MesasAdapter(list)
+    private val adapter = MesasAdapter(list, this)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,4 +49,9 @@ class MesasActivity : AppCompatActivity() {
         })
     }
 
+    override fun onClick(mesa: Int) {
+        val intent = Intent(this, PedidosActivity::class.java)
+        intent.putExtra("MESA", mesa)
+        startActivity(intent)
+    }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.opedarkgroup.features.consultapedido.view.MainActivity
+import com.opedarkgroup.features.home.view.MainActivity
 import com.opedarkgroup.R
 import com.opedarkgroup.data.models.LoginResponse
 import com.opedarkgroup.features.login.viewmodel.LoginViewModel

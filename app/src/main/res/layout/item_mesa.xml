@@ -4,13 +4,15 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <Button
+    <TextView
         android:id="@+id/mesaItem"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="@color/blue"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:textColor="@color/white"
         android:text="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
