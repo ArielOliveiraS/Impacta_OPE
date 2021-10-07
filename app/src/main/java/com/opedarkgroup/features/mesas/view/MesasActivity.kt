@@ -6,11 +6,10 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.opedarkgroup.R
 import com.opedarkgroup.data.models.MesaResponse
 import com.opedarkgroup.features.listapedidos.view.PedidosActivity
-import com.opedarkgroup.features.mesas.view.adapter.ClickViewContract
+import com.opedarkgroup.features.listapedidos.view.adapter.ClickViewContract
 import com.opedarkgroup.features.mesas.view.adapter.MesasAdapter
 import com.opedarkgroup.features.mesas.viewmodel.BuscaMesasLivresViewModel
 import kotlinx.android.synthetic.main.activity_mesas.*

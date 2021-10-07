@@ -1,8 +1,6 @@
 package com.opedarkgroup.data.api
 
-import com.opedarkgroup.data.models.LoginResponse
-import com.opedarkgroup.data.models.MesaResponse
-import com.opedarkgroup.data.models.PedidoResponse
+import com.opedarkgroup.data.models.*
 import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.Body
@@ -14,8 +12,8 @@ interface LoginApi {
     @POST("/Login/Login")
     fun getLogin(@Body loginResponse: LoginResponse) : Completable
 
-//    @GET("/Order/BuscaProdutos")
-//    fun buscarProdutos() : Single<AlgumaCoisa>
+    @POST("/Order/BuscaProduto")
+    fun buscarProdutos(@Body categoria: CategoriaProduto) : Single<List<PedidoPorCategoria>>
 
     @GET("/Order/BuscaMesasLivres")
     fun buscarMesasLivres() : Single<List<MesaResponse>>

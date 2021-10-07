@@ -1,5 +1,6 @@
 package com.opedarkgroup.features.listapedidos.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.opedarkgroup.R
@@ -25,8 +26,8 @@ class PedidosActivity : AppCompatActivity() {
 
     private fun selecionarCategoriaPedido() {
 
-        constraintBebidas.setOnClickListener {
-
+        setaBebidas.setOnClickListener {
+            startActivity(Intent(this, PedidosPorCategoriaActivity::class.java))
         }
 
         constraintCarnes.setOnClickListener {

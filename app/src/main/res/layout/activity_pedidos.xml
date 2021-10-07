@@ -74,6 +74,7 @@
             app:layout_constraintTop_toBottomOf="@id/opcaoBebida" />
 
         <ImageView
+            android:id="@+id/setaBebidas"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/ic_seta"
