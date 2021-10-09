@@ -1,4 +1,4 @@
-package com.opedarkgroup.features.mesas.view
+package com.opedarkgroup.features.mesaslivres.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.opedarkgroup.R
 import com.opedarkgroup.data.models.MesaResponse
 import com.opedarkgroup.features.listapedidos.view.PedidosActivity
-import com.opedarkgroup.features.listapedidos.view.adapter.ClickViewContract
-import com.opedarkgroup.features.mesas.view.adapter.MesasAdapter
-import com.opedarkgroup.features.mesas.viewmodel.BuscaMesasLivresViewModel
+import com.opedarkgroup.features.mesasocupadas.view.adapter.ClickViewContract
+import com.opedarkgroup.features.mesaslivres.view.adapter.MesasAdapter
+import com.opedarkgroup.features.mesaslivres.viewmodel.BuscaMesasLivresViewModel
 import kotlinx.android.synthetic.main.activity_mesas.*
 
 class MesasActivity : AppCompatActivity(), ClickViewContract {

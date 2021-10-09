@@ -12,17 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Opedarkgroup">
         <activity
+            android:name=".features.comanda.view.VisualizarComandaActivity"
+            android:exported="true" />
+        <activity
             android:name=".features.listapedidos.view.PedidosPorCategoriaActivity"
             android:exported="true" />
         <activity
             android:name=".features.listapedidos.view.PedidosActivity"
             android:exported="true" />
         <activity
-            android:name=".features.consultarmesas.view.ConsultaMesasAbertasActivity"
+            android:name=".features.mesasocupadas.view.ConsultaMesasAbertasActivity"
             android:exported="true" />
         <activity
-            android:name=".features.mesas.view.MesasActivity"
-            android:exported="true"></activity>
+            android:name=".features.mesaslivres.view.MesasActivity"
+            android:exported="true" />
         <activity
             android:name=".features.home.view.MainActivity"
             android:exported="true">
@@ -34,7 +37,7 @@
         </activity>
         <activity
             android:name=".features.login.view.LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

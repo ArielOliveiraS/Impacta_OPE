@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.opedarkgroup.R
-import com.opedarkgroup.features.consultarmesas.view.ConsultaMesasAbertasActivity
-import com.opedarkgroup.features.mesas.view.MesasActivity
+import com.opedarkgroup.features.mesasocupadas.view.ConsultaMesasAbertasActivity
+import com.opedarkgroup.features.mesaslivres.view.MesasActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

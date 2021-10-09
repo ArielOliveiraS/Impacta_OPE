@@ -1,4 +1,4 @@
-package com.opedarkgroup.features.mesas.view.adapter
+package com.opedarkgroup.features.mesasocupadas.view.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,11 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.opedarkgroup.R
 import com.opedarkgroup.data.models.MesaResponse
-import com.opedarkgroup.features.listapedidos.view.adapter.ClickViewContract
 import kotlinx.android.synthetic.main.item_mesa.view.*
 
-class MesasAdapter(var list: List<MesaResponse>, private val listener: ClickViewContract):
-    RecyclerView.Adapter<MesasAdapter.ViewHolder>(){
+class MesasOcupadasAdapter(var list: List<MesaResponse>, private val listener: ClickViewContract):
+    RecyclerView.Adapter<MesasOcupadasAdapter.ViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

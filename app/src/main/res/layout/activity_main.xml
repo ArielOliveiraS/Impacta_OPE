@@ -49,7 +49,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="244dp"
         android:backgroundTint="@color/blue"
-        android:text="Fazer Pedido"
+        android:text="Mesas Livres"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
@@ -61,7 +61,7 @@
         android:layout_marginTop="16dp"
         android:layout_height="80dp"
         android:backgroundTint="@color/blue"
-        android:text="Consultar pedidos"
+        android:text="Mesas Ocupadas"
         app:layout_constraintEnd_toEndOf="@+id/btnFazerPedido"
         app:layout_constraintStart_toStartOf="@+id/btnFazerPedido"
         app:layout_constraintTop_toBottomOf="@+id/btnFazerPedido" />

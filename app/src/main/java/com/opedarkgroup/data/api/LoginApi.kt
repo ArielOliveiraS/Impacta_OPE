@@ -18,16 +18,21 @@ interface LoginApi {
     @GET("/Order/BuscaMesasLivres")
     fun buscarMesasLivres() : Single<List<MesaResponse>>
 
+    @GET("/Order/BuscaMesasOcupadas")
+    fun buscarMesasOcupadas() : Single<List<MesaResponse>>
+
     @POST("/Order/AlteraStatusMesa")
     fun alterarStatusMesa(@Body mesaResponse: MesaResponse) : Completable
 
-//    @GET("/Order/BuscaPedido")
-//    fun buscarPedido() : Single<List<AlgumaCoisa>>
+    @POST("/Order/BuscaPedido")
+    fun buscarPedido(@Body buscaPedidoBody: BuscaPedidoBody) : Single<BuscaPedidoResponse>
 
     @POST("/Order/AlteraStatusPedido")
     fun alterarStatusPedido(@Body pedidoResponse: PedidoResponse) : Completable
 
     @POST("/Order/AdicionaPedido")
-    fun acicionarPedido(@Body pedidoResponse: PedidoResponse) : Completable
+    fun adicionarPedido(@Body pedidoResponse: PedidoResponse) : Completable
 
+    @POST("/Order/AdicionaItem")
+    fun adicionarItem(@Body itemResponse: ItemPedido) : Completable
 }

@@ -1,4 +1,4 @@
-package com.opedarkgroup.features.mesas.view.adapter
+package com.opedarkgroup.features.mesaslivres.view.adapter
 
 interface ClickViewContract {
 

@@ -1,4 +1,4 @@
-package com.opedarkgroup.features.listapedidos.view.adapter
+package com.opedarkgroup.features.comanda.view.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,14 +6,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.opedarkgroup.R
 import com.opedarkgroup.data.models.PedidoPorCategoria
-import kotlinx.android.synthetic.main.item_por_categoria.view.*
+import kotlinx.android.synthetic.main.item_pedido_adicionado.view.*
 
-class ItensPorCategoriaAdapter(var list: List<PedidoPorCategoria>, private val listener: ClickPedidoViewContract):
-    RecyclerView.Adapter<ItensPorCategoriaAdapter.ViewHolder>(){
+class ItensComandaAdapter(var list: List<PedidoPorCategoria>):
+    RecyclerView.Adapter<ItensComandaAdapter.ViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_por_categoria, parent, false);
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_pedido_adicionado, parent, false);
         return ViewHolder(view)
     }
 
@@ -22,12 +22,8 @@ class ItensPorCategoriaAdapter(var list: List<PedidoPorCategoria>, private val l
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = list[position]
-        holder.onBind(item)
-
-        holder.itemView.setOnClickListener {
-            listener.onClick(item.id_produto_pk)
-        }
+        val mesa = list[position]
+        holder.onBind(mesa)
     }
 
     fun updateList(newList: List<PedidoPorCategoria>) {
@@ -39,9 +35,9 @@ class ItensPorCategoriaAdapter(var list: List<PedidoPorCategoria>, private val l
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun onBind(item: PedidoPorCategoria) {
-            itemView.nomeProduto.text = item.produto
-            itemView.valorProduto.text =  "R$: ${item.valor}"
+        fun onBind(itemPedido: PedidoPorCategoria) {
+            itemView.nomeProduto.text = itemPedido.produto
+            itemView.valorProduto.text = itemPedido.valor.toString()
         }
     }
 }

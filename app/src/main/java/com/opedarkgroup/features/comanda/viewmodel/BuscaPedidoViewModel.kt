@@ -1,33 +1,29 @@
-package com.opedarkgroup.features.mesas.viewmodel
+package com.opedarkgroup.features.comanda.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.opedarkgroup.data.api.RetrofitService
-import com.opedarkgroup.data.models.LoginResponse
-import com.opedarkgroup.data.models.MesaResponse
+import com.opedarkgroup.data.models.BuscaPedidoBody
+import com.opedarkgroup.data.models.BuscaPedidoResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class BuscaMesasLivresViewModel : ViewModel() {
+class BuscaPedidoViewModel : ViewModel() {
 
     val disposable = CompositeDisposable()
-    val buscarMesasLivresResult: MutableLiveData<List<MesaResponse>> = MutableLiveData()
+    val buscarPedidoResult: MutableLiveData<BuscaPedidoResponse> = MutableLiveData()
     private val error: MutableLiveData<String> = MutableLiveData()
 
-    fun buscarMesasLivres() {
+    fun buscarPedido(buscaPedidoBody: BuscaPedidoBody) {
         disposable.add(
-            RetrofitService.service.buscarMesasLivres()
+            RetrofitService.service.buscarPedido(buscaPedidoBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    buscarMesasLivresResult.value = it
-                    Log.i("teste", "sucesso")
+                    buscarPedidoResult.value = it
                 }, { e ->
                     error.value = e.message
-                    Log.i("teste", e.message ?: "erro")
-
                 })
         )
     }
