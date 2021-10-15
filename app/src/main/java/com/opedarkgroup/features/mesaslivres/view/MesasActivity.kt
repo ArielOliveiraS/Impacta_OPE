@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.opedarkgroup.R
-import com.opedarkgroup.data.models.MesaResponse
+import com.opedarkgroup.data.models.buscamesas.MesaResponse
 import com.opedarkgroup.features.listapedidos.view.PedidosActivity
 import com.opedarkgroup.features.mesasocupadas.view.adapter.ClickViewContract
 import com.opedarkgroup.features.mesaslivres.view.adapter.MesasAdapter
@@ -23,7 +23,8 @@ class MesasActivity : AppCompatActivity(), ClickViewContract {
         MesaResponse(2, 2, 4),
         MesaResponse(3, 3, 4),
         MesaResponse(4, 4, 4),
-        MesaResponse(5, 5, 5))
+        MesaResponse(5, 5, 5)
+    )
 
 
     private val adapter = MesasAdapter(list, this)

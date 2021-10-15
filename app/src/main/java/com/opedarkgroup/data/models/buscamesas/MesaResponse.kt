@@ -1,4 +1,4 @@
-package com.opedarkgroup.data.models
+package com.opedarkgroup.data.models.buscamesas
 
 data class MesaResponse(
     val id_mesa_pk : Int,

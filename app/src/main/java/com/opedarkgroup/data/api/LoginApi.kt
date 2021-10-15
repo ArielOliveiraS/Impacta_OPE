@@ -1,6 +1,13 @@
 package com.opedarkgroup.data.api
 
 import com.opedarkgroup.data.models.*
+import com.opedarkgroup.data.models.buscamesas.MesaResponse
+import com.opedarkgroup.data.models.buscapedido.BuscaPedidoBody
+import com.opedarkgroup.data.models.buscapedido.BuscaPedidoResponse
+import com.opedarkgroup.data.models.buscaprodutoporcategoria.CategoriaProduto
+import com.opedarkgroup.data.models.buscaprodutoporcategoria.PedidoPorCategoria
+import com.opedarkgroup.data.models.enviarpedidos.EnviarPedidoBody
+import com.opedarkgroup.data.models.login.LoginResponse
 import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.Body
@@ -35,4 +42,7 @@ interface LoginApi {
 
     @POST("/Order/AdicionaItem")
     fun adicionarItem(@Body itemResponse: ItemPedido) : Completable
+
+    @POST("/Order/EnviaPedido")
+    fun enviarPedido(@Body enviarPedidoBody: EnviarPedidoBody) : Completable
 }

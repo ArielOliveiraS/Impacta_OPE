@@ -5,10 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.opedarkgroup.R
-import com.opedarkgroup.data.models.PedidoPorCategoria
+import com.opedarkgroup.data.models.buscapedido.BuscaPedidoItemResponse
 import kotlinx.android.synthetic.main.item_pedido_adicionado.view.*
 
-class ItensComandaAdapter(var list: List<PedidoPorCategoria>):
+class ItensComandaAdapter(var list: List<BuscaPedidoItemResponse>):
     RecyclerView.Adapter<ItensComandaAdapter.ViewHolder>(){
 
 
@@ -26,7 +26,7 @@ class ItensComandaAdapter(var list: List<PedidoPorCategoria>):
         holder.onBind(mesa)
     }
 
-    fun updateList(newList: List<PedidoPorCategoria>) {
+    fun updateList(newList: List<BuscaPedidoItemResponse>) {
         //this.list.removeAll(list)
         if (newList != null) {
             this.list = newList
@@ -35,8 +35,8 @@ class ItensComandaAdapter(var list: List<PedidoPorCategoria>):
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun onBind(itemPedido: PedidoPorCategoria) {
-            itemView.nomeProduto.text = itemPedido.produto
+        fun onBind(itemPedido: BuscaPedidoItemResponse) {
+            itemView.nomeProduto.text = itemPedido.id_item_pk.toString()
             itemView.valorProduto.text = itemPedido.valor.toString()
         }
     }

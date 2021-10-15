@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Opedarkgroup">
         <activity
+            android:name=".features.pedidosmesaocupada.view.PedidosMesaAbertaActivity"
+            android:exported="true" />
+        <activity
             android:name=".features.comanda.view.VisualizarComandaActivity"
             android:exported="true" />
         <activity

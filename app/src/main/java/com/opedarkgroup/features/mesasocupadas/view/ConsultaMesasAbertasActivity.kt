@@ -7,15 +7,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.opedarkgroup.R
-import com.opedarkgroup.data.models.MesaResponse
-import com.opedarkgroup.features.listapedidos.view.PedidosActivity
+import com.opedarkgroup.data.models.buscamesas.MesaResponse
 import com.opedarkgroup.features.mesasocupadas.view.adapter.ClickViewContract
 import com.opedarkgroup.features.mesaslivres.view.adapter.MesasAdapter
-import com.opedarkgroup.features.mesaslivres.viewmodel.BuscaMesasLivresViewModel
 import com.opedarkgroup.features.mesasocupadas.viewmodel.BuscaMesasOcupadasViewModel
+import com.opedarkgroup.features.pedidosmesaocupada.view.PedidosMesaAbertaActivity
 import kotlinx.android.synthetic.main.activity_consulta_mesas_abertas.*
-import kotlinx.android.synthetic.main.activity_mesas.*
-import kotlinx.android.synthetic.main.activity_mesas.recyclerViewMesas
 
 class ConsultaMesasAbertasActivity : AppCompatActivity(), ClickViewContract {
 
@@ -53,7 +50,7 @@ class ConsultaMesasAbertasActivity : AppCompatActivity(), ClickViewContract {
     }
 
     override fun onClick(mesa: Int) {
-        val intent = Intent(this, PedidosActivity::class.java)
+        val intent = Intent(this, PedidosMesaAbertaActivity::class.java)
         intent.putExtra("MESA", mesa)
         startActivity(intent)
     }

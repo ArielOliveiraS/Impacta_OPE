@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.opedarkgroup.data.api.RetrofitService
-import com.opedarkgroup.data.models.MesaResponse
+import com.opedarkgroup.data.models.buscamesas.MesaResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers

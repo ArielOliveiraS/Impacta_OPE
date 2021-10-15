@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_dark"
-    tools:context=".features.comanda.view.VisualizarComandaActivity">
+    tools:context=".features.listapedidos.view.PedidosActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -31,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnPedidoVoltar"
+            android:id="@+id/btnPedidoAbertoVoltar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -44,7 +44,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewPedidosAdicionados"
+        android:id="@+id/recyclerViewPedidosMesaAberta"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="24dp"
@@ -56,22 +56,37 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:background="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnEnviarComanda"
+        android:id="@+id/btnAdicionarMaisItens"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/blue_dark"
+        android:text="Adicionar Mais Itens"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <Button
+        android:id="@+id/btnVizualizarComanda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:backgroundTint="@color/blue_dark"
-        android:text="Enviar comanda"
+        android:text="Marcar como concluído"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAdicionarMaisItens"
+        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

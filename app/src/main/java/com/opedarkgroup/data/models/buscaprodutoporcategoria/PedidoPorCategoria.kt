@@ -1,4 +1,4 @@
-package com.opedarkgroup.data.models
+package com.opedarkgroup.data.models.buscaprodutoporcategoria
 
 data class PedidoPorCategoria(
     val id_produto_pk: Int,

@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.opedarkgroup.R
-import com.opedarkgroup.data.models.MesaResponse
+import com.opedarkgroup.data.models.buscamesas.MesaResponse
 import kotlinx.android.synthetic.main.item_mesa.view.*
 
 class MesasOcupadasAdapter(var list: List<MesaResponse>, private val listener: ClickViewContract):

@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.opedarkgroup.R
-import com.opedarkgroup.data.models.PedidoPorCategoria
+import com.opedarkgroup.data.models.buscaprodutoporcategoria.PedidoPorCategoria
 import kotlinx.android.synthetic.main.item_por_categoria.view.*
 
 class ItensPorCategoriaAdapter(var list: List<PedidoPorCategoria>, private val listener: ClickPedidoViewContract):

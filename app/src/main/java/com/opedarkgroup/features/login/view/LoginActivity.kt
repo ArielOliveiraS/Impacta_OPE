@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.opedarkgroup.features.home.view.MainActivity
 import com.opedarkgroup.R
-import com.opedarkgroup.data.models.LoginResponse
+import com.opedarkgroup.data.models.login.LoginResponse
 import com.opedarkgroup.features.login.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.activity_login.*
 
