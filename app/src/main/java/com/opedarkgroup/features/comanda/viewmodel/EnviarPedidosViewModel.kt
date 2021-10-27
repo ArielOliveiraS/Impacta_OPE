@@ -16,7 +16,7 @@ class EnviarPedidosViewModel : ViewModel() {
     val enviarPedidoResult: MutableLiveData<Boolean> = MutableLiveData()
     private val error: MutableLiveData<String> = MutableLiveData()
 
-    fun buscarPedido(enviarPedidoBody: EnviarPedidoBody) {
+    fun enviarPedido(enviarPedidoBody: EnviarPedidoBody) {
         disposable.add(
             RetrofitService.service.enviarPedido(enviarPedidoBody)
                 .subscribeOn(Schedulers.io())

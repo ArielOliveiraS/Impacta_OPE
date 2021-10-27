@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_dark"
-    tools:context=".features.listapedidos.view.PedidosActivity">
+    tools:context=".features.pedidosmesaocupada.view.PedidosMesaAbertaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -75,7 +75,7 @@
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <Button
-        android:id="@+id/btnVizualizarComanda"
+        android:id="@+id/btnConcluirPedido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"

@@ -1,5 +1,6 @@
 package com.opedarkgroup.features.comanda.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -14,7 +15,9 @@ import com.opedarkgroup.data.models.enviarpedidos.EnviarPedidoItemBody
 import com.opedarkgroup.features.comanda.view.adapter.ItensComandaAdapter
 import com.opedarkgroup.features.comanda.viewmodel.BuscaPedidoViewModel
 import com.opedarkgroup.features.comanda.viewmodel.EnviarPedidosViewModel
+import com.opedarkgroup.features.home.view.MainActivity
 import com.opedarkgroup.features.listapedidos.view.ID_MESA
+import com.opedarkgroup.features.mesaslivres.view.MesasActivity
 import kotlinx.android.synthetic.main.activity_visualizar_comanda.*
 
 class VisualizarComandaActivity : AppCompatActivity() {
@@ -25,39 +28,51 @@ class VisualizarComandaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_visualizar_comanda)
+        listarPedidos()
 
+        btnEnviarComanda.setOnClickListener {
+            enviarPedido()
+        }
+    }
+
+    private fun listarPedidos() {
         val viewModel = ViewModelProviders.of(this).get(BuscaPedidoViewModel::class.java)
-        val viewModelEnviarPedidos = ViewModelProviders.of(this).get(EnviarPedidosViewModel::class.java)
 
         recyclerViewPedidosAdicionados.adapter = adapter
         recyclerViewPedidosAdicionados.layoutManager = LinearLayoutManager(this)
 
         val idMesa: Int = intent.getIntExtra(ID_MESA, -1)
-        numeroMesaTxt.text = idMesa.toString()
+        numeroMesaTxt.text = "Mesa $idMesa"
 
-
-        viewModel.buscarPedido(BuscaPedidoBody(4))
+        viewModel.buscarPedido(BuscaPedidoBody(idMesa))
 
         viewModel.buscarPedidoResult.observe(this, Observer {
-            it.itens?.let { listaPedidos ->
+            it.pedidoResponse?.itens?.let { listaPedidos ->
                 adapter.updateList(listaPedidos)
             }
+//            it.itens?.let { listaPedidos ->
+//                adapter.updateList(listaPedidos)
+//            }
         })
+    }
 
-        btnEnviarComanda.setOnClickListener {
+    private fun enviarPedido() {
+        val viewModelEnviarPedidos =
+            ViewModelProviders.of(this).get(EnviarPedidosViewModel::class.java)
 
-            val listaPedidos = listOf(EnviarPedidoItemBody(1, 1, 1, 1))
-            val pedido = EnviarPedidoBody(1, 2, 2, "", "", listaPedidos)
+        val idPedido = intent.getIntExtra("ID_PEDIDO2", -1)
+        val pedido = EnviarPedidoBody(idPedido)
 
-
-            viewModelEnviarPedidos.buscarPedido(pedido)
-            viewModelEnviarPedidos.enviarPedidoResult.observe(this, Observer {
-              if (it) {
-                  Toast.makeText(applicationContext, "Pedido enviado com sucesso", Toast.LENGTH_SHORT).show()
-              } else {
-                  Toast.makeText(applicationContext, "Erro ao enviar pedido", Toast.LENGTH_SHORT).show()
-              }
-            })
-        }
+        viewModelEnviarPedidos.enviarPedido(pedido)
+        viewModelEnviarPedidos.enviarPedidoResult.observe(this, Observer {
+            if (it) {
+                Toast.makeText(applicationContext, "Pedido enviado com sucesso", Toast.LENGTH_SHORT)
+                    .show()
+                startActivity(Intent(this, MainActivity::class.java))
+            } else {
+                Toast.makeText(applicationContext, "Erro ao enviar pedido", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        })
     }
 }

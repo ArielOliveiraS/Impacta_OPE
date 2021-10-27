@@ -27,7 +27,6 @@ class ItensComandaAdapter(var list: List<BuscaPedidoItemResponse>):
     }
 
     fun updateList(newList: List<BuscaPedidoItemResponse>) {
-        //this.list.removeAll(list)
         if (newList != null) {
             this.list = newList
         }
@@ -36,7 +35,7 @@ class ItensComandaAdapter(var list: List<BuscaPedidoItemResponse>):
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun onBind(itemPedido: BuscaPedidoItemResponse) {
-            itemView.nomeProduto.text = itemPedido.id_item_pk.toString()
+            itemView.nomeProduto.text = itemPedido.nomeProduto
             itemView.valorProduto.text = itemPedido.valor.toString()
         }
     }

@@ -5,5 +5,6 @@ data class BuscaPedidoItemResponse(
     val id_pedido_fk: Int,
     val id_produto_fk: Int,
     val quantidade: Int,
-    val valor: Float
+    val valor: Float,
+    val nomeProduto:String
 )

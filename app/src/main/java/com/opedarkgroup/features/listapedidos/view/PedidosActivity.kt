@@ -13,12 +13,14 @@ const val ID_MESA = "idMesa"
 class PedidosActivity : AppCompatActivity() {
 
     private var numeroMesa: Int = 0
+    var idPedido: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pedidos)
 
         numeroMesa = intent.getIntExtra("MESA", -1)
+        idPedido = intent.getIntExtra("ID_PEDIDO", -1)
 
         numeroMesaTxt.text = "Mesa $numeroMesa"
 
@@ -27,6 +29,7 @@ class PedidosActivity : AppCompatActivity() {
         btnVizualizarComanda.setOnClickListener {
             val intent = Intent(this, VisualizarComandaActivity::class.java)
             intent.putExtra(ID_MESA, numeroMesa)
+            intent.putExtra("ID_PEDIDO2", idPedido)
             startActivity(intent)
         }
     }
@@ -37,6 +40,7 @@ class PedidosActivity : AppCompatActivity() {
             val intent = Intent(this, PedidosPorCategoriaActivity::class.java)
             intent.putExtra(CATEGORIA_PEDIDO, "Bebidas")
             intent.putExtra(ID_MESA, numeroMesa)
+            intent.putExtra("ID_PEDIDO2", idPedido)
             startActivity(intent)
         }
 
@@ -44,6 +48,7 @@ class PedidosActivity : AppCompatActivity() {
             val intent = Intent(this, PedidosPorCategoriaActivity::class.java)
             intent.putExtra(CATEGORIA_PEDIDO, "Pratos")
             intent.putExtra(ID_MESA, numeroMesa)
+            intent.putExtra("ID_PEDIDO2", idPedido)
             startActivity(intent)
         }
 
@@ -51,6 +56,7 @@ class PedidosActivity : AppCompatActivity() {
             val intent = Intent(this, PedidosPorCategoriaActivity::class.java)
             intent.putExtra(CATEGORIA_PEDIDO, "Sobremesa")
             intent.putExtra(ID_MESA, numeroMesa)
+            intent.putExtra("ID_PEDIDO2", idPedido)
             startActivity(intent)
         }
     }

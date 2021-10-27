@@ -1,5 +1,6 @@
 package com.opedarkgroup.features.listapedidos.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.opedarkgroup.data.api.RetrofitService
@@ -15,16 +16,18 @@ class AdicionaItemViewModel : ViewModel() {
     val adicionaPedidoResult: MutableLiveData<Boolean> = MutableLiveData()
     private val error: MutableLiveData<String> = MutableLiveData()
 
-    fun adicionarPedido(itemPedido: ItemPedido) {
+    fun adicionarItem(itemPedido: ItemPedido) {
         disposable.add(
             RetrofitService.service.adicionarItem(itemPedido)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     adicionaPedidoResult.value = true
+                    Log.i("teste", "adiciona item sucesso")
                 }, { e ->
                     adicionaPedidoResult.value = false
                     error.value = e.message
+                    Log.i("teste", "adiciona item erro : ${e.message}")
                 })
         )
     }

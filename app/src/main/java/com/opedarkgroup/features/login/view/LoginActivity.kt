@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.opedarkgroup.features.home.view.MainActivity
 import com.opedarkgroup.R
-import com.opedarkgroup.data.models.login.LoginResponse
+import com.opedarkgroup.data.models.login.LoginBody
 import com.opedarkgroup.features.login.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
         btnEntrar.setOnClickListener {
             val user = usuarioEditText.text.toString()
             val password = senhaEditText.text.toString()
-            viewModel.getLogin(LoginResponse(user, password))
+            viewModel.getLogin(LoginBody(user, password))
 
             viewModel.loginResult.observe(this, Observer {
                 if (it) {
