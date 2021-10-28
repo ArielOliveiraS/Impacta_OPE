@@ -8,6 +8,7 @@ import com.opedarkgroup.data.models.buscaprodutoporcategoria.CategoriaProduto
 import com.opedarkgroup.data.models.buscaprodutoporcategoria.PedidoPorCategoria
 import com.opedarkgroup.data.models.criapedido.CriaPedidoBody
 import com.opedarkgroup.data.models.criapedido.CriaPedidoResponse
+import com.opedarkgroup.data.models.encerrarpedido.EncerrarPedidoBody
 import com.opedarkgroup.data.models.enviarpedidos.EnviarPedidoBody
 import com.opedarkgroup.data.models.login.LoginBody
 import com.opedarkgroup.data.models.login.LoginResponse
@@ -48,4 +49,7 @@ interface LoginApi {
 
     @POST("/Order/CriaPedido")
     fun criaPedido(@Body criaPedidoBody: CriaPedidoBody) : Single<CriaPedidoResponse>
+
+    @POST("/Order/EncerraPedido")
+    fun encerrarPedido(@Body encerrarPedidoBody: EncerrarPedidoBody) : Completable
 }

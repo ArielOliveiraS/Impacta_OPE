@@ -69,22 +69,8 @@ class MesasActivity : AppCompatActivity(), ClickViewContract {
             bundle.putInt("ID_PEDIDO", it)
             intent.putExtras(bundle)
 
-//            Bundle bundle = new Bundle();
-//            bundle.putString("id_do_item", "seu_dado");
-//            Intent intent = new Intent(context, MinhaOutraActivity.class);
-//            intent.putExtra(bundle);
-//            startActivity(intent);
-
-
-//            intent.putExtra("MESA", mesa)
-//            intent.putExtra("ID_PEDIDO", it)
             startActivity(intent)
 
         })
-
-//        val intent = Intent(this, PedidosActivity::class.java)
-//        intent.putExtra("MESA", mesa)
-//        intent.putExtra("ID_PEDIDO", idPedido)
-//        startActivity(intent)
     }
 }

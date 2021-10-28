@@ -32,16 +32,15 @@
         <activity
             android:name=".features.home.view.MainActivity"
             android:exported="true">
+        </activity>
+        <activity
+            android:name=".features.login.view.LoginActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".features.login.view.LoginActivity"
-            android:exported="true" >
-
         </activity>
     </application>
 

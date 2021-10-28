@@ -3,18 +3,21 @@ package com.opedarkgroup.features.pedidosmesaocupada.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.opedarkgroup.R
 import com.opedarkgroup.data.models.buscapedido.BuscaPedidoBody
 import com.opedarkgroup.data.models.buscapedido.BuscaPedidoItemResponse
+import com.opedarkgroup.data.models.encerrarpedido.EncerrarPedidoBody
 import com.opedarkgroup.features.comanda.view.VisualizarComandaActivity
 import com.opedarkgroup.features.comanda.view.adapter.ItensComandaAdapter
 import com.opedarkgroup.features.comanda.viewmodel.BuscaPedidoViewModel
 import com.opedarkgroup.features.home.view.MainActivity
 import com.opedarkgroup.features.listapedidos.view.ID_MESA
 import com.opedarkgroup.features.listapedidos.view.PedidosActivity
+import com.opedarkgroup.features.pedidosmesaocupada.viewmodel.EncerrarPedidoViewModel
 import kotlinx.android.synthetic.main.activity_pedidos.*
 import kotlinx.android.synthetic.main.activity_pedidos.numeroMesaTxt
 import kotlinx.android.synthetic.main.activity_pedidos_mesa_aberta.*
@@ -26,6 +29,7 @@ class PedidosMesaAbertaActivity : AppCompatActivity() {
 
     private val list = listOf<BuscaPedidoItemResponse>()
     private val adapter = ItensComandaAdapter(list)
+    private var idPedido = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,24 +48,36 @@ class PedidosMesaAbertaActivity : AppCompatActivity() {
         viewModel.buscarPedido(BuscaPedidoBody(numeroMesa))
 
         viewModel.buscarPedidoResult.observe(this, Observer {
+            idPedido = it.pedidoId
             it.pedidoResponse?.itens?.let { listaPedidos ->
                 adapter.updateList(listaPedidos)
             }
-
-//            it.itens?.let { listaPedidos ->
-//                adapter.updateList(listaPedidos)
-//            }
         })
     }
 
-    fun configuraBotoes() {
+    private fun configuraBotoes() {
         btnAdicionarMaisItens.setOnClickListener {
             val intent = Intent(this, PedidosActivity::class.java)
-            intent.putExtra("MESA", numeroMesa)
+            var bundle = Bundle()
+
+            bundle.putInt("MESA", numeroMesa)
+            bundle.putInt("ID_PEDIDO", idPedido)
+            intent.putExtras(bundle)
+
             startActivity(intent)
         }
 
         btnConcluirPedido.setOnClickListener {
+            val viewModelEncerrarPedido = ViewModelProviders.of(this).get(EncerrarPedidoViewModel::class.java)
+
+            viewModelEncerrarPedido.encerrarPedido(EncerrarPedidoBody(idPedido))
+            viewModelEncerrarPedido.pedidoEncerradoResult  .observe(this, Observer {
+                if (it){
+                    Toast.makeText(applicationContext, "Pedido finalizado", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(applicationContext, "Erro ao finalizado pedido", Toast.LENGTH_LONG).show()
+                }
+            })
             startActivity(Intent(this, MainActivity::class.java))
         }
     }
