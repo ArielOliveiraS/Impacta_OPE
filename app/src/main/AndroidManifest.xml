@@ -12,30 +12,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Opedarkgroup">
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.pedidosmesaocupada.view.PedidosMesaAbertaActivity"
+            android:name=".features.admin.mesas.ConfiuracoesMesasActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.comanda.view.VisualizarComandaActivity"
+            android:name=".features.admin.funcionarios.ConfiguracoesFuncionariosActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.listapedidos.view.PedidosPorCategoriaActivity"
+            android:name=".features.admin.produtos.ConfiguracoesProdutosActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.listapedidos.view.PedidosActivity"
+            android:name=".features.admin.configuracoes.ConfiguracoesActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.mesasocupadas.view.ConsultaMesasAbertasActivity"
+            android:name=".features.comandaeletronica.pedidosmesaocupada.view.PedidosMesaAbertaActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.mesaslivres.view.MesasActivity"
+            android:name=".features.comandaeletronica.comanda.view.VisualizarComandaActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.home.view.MainActivity"
-            android:exported="true">
-        </activity>
+            android:name=".features.comandaeletronica.listapedidos.view.PedidosPorCategoriaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.comandaeletronica.listapedidos.view.PedidosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.comandaeletronica.mesasocupadas.view.ConsultaMesasAbertasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.comandaeletronica.mesaslivres.view.MesasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.comandaeletronica.home.view.MainActivity"
+            android:exported="true" />
         <activity
             android:name=".features.login.view.LoginActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.opedarkgroup.R
+import com.opedarkgroup.features.admin.configuracoes.ConfiguracoesActivity
 import com.opedarkgroup.features.comandaeletronica.mesasocupadas.view.ConsultaMesasAbertasActivity
 import com.opedarkgroup.features.comandaeletronica.mesaslivres.view.MesasActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity() {
 
         btnConsultarPedido.setOnClickListener {
             startActivity(Intent(this, ConsultaMesasAbertasActivity::class.java))
+        }
+
+        btnConfiguracoes.setOnClickListener {
+            startActivity(Intent(this, ConfiguracoesActivity::class.java))
         }
     }
 }

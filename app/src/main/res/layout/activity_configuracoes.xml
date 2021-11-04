@@ -17,24 +17,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:layout_marginStart="8dp"
-            android:text="Selecionar Mesa"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <Button
+            android:id="@+id/btnVoltarConfig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:backgroundTint="@color/blue"
-            android:text="Sair"
+            android:text="Voltar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -43,40 +32,40 @@
 
 
     <Button
-        android:id="@+id/btnFazerPedido"
+        android:id="@+id/btnGerenciarFuncionarios"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="224dp"
         android:backgroundTint="@color/blue"
-        android:text="Mesas Livres"
+        android:text="Gerenciar Funcionários"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <Button
-        android:id="@+id/btnConsultarPedido"
+        android:id="@+id/btnGerenciarProdutos"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/blue"
-        android:text="Mesas Ocupadas"
-        app:layout_constraintEnd_toEndOf="@+id/btnFazerPedido"
-        app:layout_constraintStart_toStartOf="@+id/btnFazerPedido"
-        app:layout_constraintTop_toBottomOf="@+id/btnFazerPedido" />
+        android:text="Gerenciar Produtos"
+        app:layout_constraintEnd_toEndOf="@+id/btnGerenciarFuncionarios"
+        app:layout_constraintStart_toStartOf="@+id/btnGerenciarFuncionarios"
+        app:layout_constraintTop_toBottomOf="@+id/btnGerenciarFuncionarios" />
 
     <Button
-        android:id="@+id/btnConfiguracoes"
+        android:id="@+id/btnGerenciarMesas"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/blue"
-        android:text="Administrativo"
-        app:layout_constraintEnd_toEndOf="@+id/btnConsultarPedido"
-        app:layout_constraintStart_toStartOf="@+id/btnConsultarPedido"
-        app:layout_constraintTop_toBottomOf="@+id/btnConsultarPedido" />
+        android:text="Gerenciar Mesas"
+        app:layout_constraintEnd_toEndOf="@+id/btnGerenciarProdutos"
+        app:layout_constraintStart_toStartOf="@+id/btnGerenciarProdutos"
+        app:layout_constraintTop_toBottomOf="@+id/btnGerenciarProdutos" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
