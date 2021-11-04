@@ -12,25 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Opedarkgroup">
         <activity
-            android:name=".features.pedidosmesaocupada.view.PedidosMesaAbertaActivity"
+            android:name="com.opedarkgroup.features.comandaeletronica.pedidosmesaocupada.view.PedidosMesaAbertaActivity"
             android:exported="true" />
         <activity
-            android:name=".features.comanda.view.VisualizarComandaActivity"
+            android:name="com.opedarkgroup.features.comandaeletronica.comanda.view.VisualizarComandaActivity"
             android:exported="true" />
         <activity
-            android:name=".features.listapedidos.view.PedidosPorCategoriaActivity"
+            android:name="com.opedarkgroup.features.comandaeletronica.listapedidos.view.PedidosPorCategoriaActivity"
             android:exported="true" />
         <activity
-            android:name=".features.listapedidos.view.PedidosActivity"
+            android:name="com.opedarkgroup.features.comandaeletronica.listapedidos.view.PedidosActivity"
             android:exported="true" />
         <activity
-            android:name=".features.mesasocupadas.view.ConsultaMesasAbertasActivity"
+            android:name="com.opedarkgroup.features.comandaeletronica.mesasocupadas.view.ConsultaMesasAbertasActivity"
             android:exported="true" />
         <activity
-            android:name=".features.mesaslivres.view.MesasActivity"
+            android:name="com.opedarkgroup.features.comandaeletronica.mesaslivres.view.MesasActivity"
             android:exported="true" />
         <activity
-            android:name=".features.home.view.MainActivity"
+            android:name="com.opedarkgroup.features.comandaeletronica.home.view.MainActivity"
             android:exported="true">
         </activity>
         <activity

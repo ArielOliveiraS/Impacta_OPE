@@ -1,15 +1,26 @@
 package com.opedarkgroup.data.api
 
-import com.opedarkgroup.data.models.*
-import com.opedarkgroup.data.models.buscamesas.MesaResponse
-import com.opedarkgroup.data.models.buscapedido.BuscaPedidoBody
-import com.opedarkgroup.data.models.buscapedido.BuscaPedidoResponse
-import com.opedarkgroup.data.models.buscaprodutoporcategoria.CategoriaProduto
-import com.opedarkgroup.data.models.buscaprodutoporcategoria.PedidoPorCategoria
-import com.opedarkgroup.data.models.criapedido.CriaPedidoBody
-import com.opedarkgroup.data.models.criapedido.CriaPedidoResponse
-import com.opedarkgroup.data.models.encerrarpedido.EncerrarPedidoBody
-import com.opedarkgroup.data.models.enviarpedidos.EnviarPedidoBody
+import com.opedarkgroup.data.models.admin.adicionamesa.AdicionaMesaBody
+import com.opedarkgroup.data.models.admin.adicionaproduto.AdicionaProdutoBody
+import com.opedarkgroup.data.models.admin.alterafuncionario.AlteraFuncionarioBody
+import com.opedarkgroup.data.models.admin.alteraproduto.AlteraProdutoBody
+import com.opedarkgroup.data.models.admin.buscafuncionarios.BuscaFuncionariosResponse
+import com.opedarkgroup.data.models.admin.criafuncionario.CriaFuncionarioBody
+import com.opedarkgroup.data.models.admin.removefuncionario.RemoveFuncionarioBody
+import com.opedarkgroup.data.models.admin.removemesa.RemoveMesaBody
+import com.opedarkgroup.data.models.admin.removeproduto.RemoveProdutoBody
+import com.opedarkgroup.data.models.admin.resetsenha.ResetSenhaBody
+import com.opedarkgroup.data.models.comanda.ItemPedido
+import com.opedarkgroup.data.models.comanda.PedidoResponse
+import com.opedarkgroup.data.models.comanda.buscamesas.MesaResponse
+import com.opedarkgroup.data.models.comanda.buscapedido.BuscaPedidoBody
+import com.opedarkgroup.data.models.comanda.buscapedido.BuscaPedidoResponse
+import com.opedarkgroup.data.models.comanda.buscaprodutoporcategoria.CategoriaProduto
+import com.opedarkgroup.data.models.comanda.buscaprodutoporcategoria.PedidoPorCategoria
+import com.opedarkgroup.data.models.comanda.criapedido.CriaPedidoBody
+import com.opedarkgroup.data.models.comanda.criapedido.CriaPedidoResponse
+import com.opedarkgroup.data.models.comanda.encerrarpedido.EncerrarPedidoBody
+import com.opedarkgroup.data.models.comanda.enviarpedidos.EnviarPedidoBody
 import com.opedarkgroup.data.models.login.LoginBody
 import com.opedarkgroup.data.models.login.LoginResponse
 import io.reactivex.Completable
@@ -19,6 +30,44 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface LoginApi {
+
+    //**************************************** ADMIN ***********************************//
+
+    @POST("/AdmEmployee/CriaFuncionario")
+    fun criaFuncionario(@Body criaFuncionarioBody: CriaFuncionarioBody) : Completable
+
+    @POST("/AdmEmployee/RemoveFuncionario")
+    fun removeFuncionario(@Body removeFuncionarioBody: RemoveFuncionarioBody) : Completable
+
+    @POST("/AdmEmployee/AlteraFuncionario")
+    fun alteraFuncionario(@Body alteraFuncionarioBody: AlteraFuncionarioBody) : Completable
+
+    @GET("/AdmEmployee/BuscaFuncionarios")
+    fun buscaFuncionarios() : Single<List<BuscaFuncionariosResponse>>
+
+    @POST("/AdmEmployee/ResetSenha")
+    fun resetSenha(@Body resetSenhaBody: ResetSenhaBody) : Completable
+
+    @POST("/AdmEmployee/AdicionaProduto")
+    fun adicionaProduto(@Body adicionaProdutoBody: AdicionaProdutoBody) : Completable
+
+    @POST("/AdmEmployee/RemoveProduto")
+    fun removeProduto(@Body removeProdutoBody: RemoveProdutoBody) : Completable
+
+    @POST("/AdmEmployee/AlteraProduto")
+    fun alteraProduto(@Body alteraProdutoBody: AlteraProdutoBody) : Completable
+
+    @POST("/AdmEmployee/AdicionaMesa")
+    fun adicionaMesa(@Body adicionaMesaBody: AdicionaMesaBody) : Completable
+
+    @POST("/AdmEmployee/RemoveMesa")
+    fun removeMesa(@Body removeMesaBody: RemoveMesaBody) : Completable
+
+    @GET("/AdmEmployee/BuscaMesas")
+    fun buscaTodasAsMesas() : Single<List<MesaResponse>>
+
+
+    //*************************************** COMANDA **********************************//
 
     @POST("/Login/Login")
     fun getLogin(@Body loginBody: LoginBody) : Single<LoginResponse>
