@@ -12,13 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Opedarkgroup">
         <activity
+            android:name=".features.admin.produtos.view.AdicionaAlteraProdutoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.admin.produtos.view.ConfigCategoriaActivity"
+            android:exported="true" />
+        <activity
             android:name=".features.admin.mesas.ConfiuracoesMesasActivity"
             android:exported="true" />
         <activity
             android:name=".features.admin.funcionarios.ConfiguracoesFuncionariosActivity"
             android:exported="true" />
         <activity
-            android:name=".features.admin.produtos.ConfiguracoesProdutosActivity"
+            android:name=".features.admin.produtos.view.ConfiguracoesProdutosActivity"
             android:exported="true" />
         <activity
             android:name=".features.admin.configuracoes.ConfiguracoesActivity"
@@ -43,9 +49,6 @@
             android:exported="true" />
         <activity
             android:name=".features.comandaeletronica.home.view.MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".features.login.view.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,6 +56,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".features.login.view.LoginActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

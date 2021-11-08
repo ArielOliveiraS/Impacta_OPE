@@ -48,13 +48,13 @@ interface LoginApi {
     @POST("/AdmEmployee/ResetSenha")
     fun resetSenha(@Body resetSenhaBody: ResetSenhaBody) : Completable
 
-    @POST("/AdmEmployee/AdicionaProduto")
+    @POST("/AdmProduct/AdicionaProduto")
     fun adicionaProduto(@Body adicionaProdutoBody: AdicionaProdutoBody) : Completable
 
-    @POST("/AdmEmployee/RemoveProduto")
+    @POST("/AdmProduct/RemoveProduto")
     fun removeProduto(@Body removeProdutoBody: RemoveProdutoBody) : Completable
 
-    @POST("/AdmEmployee/AlteraProduto")
+    @POST("/AdmProduct/AlteraProduto")
     fun alteraProduto(@Body alteraProdutoBody: AlteraProdutoBody) : Completable
 
     @POST("/AdmEmployee/AdicionaMesa")

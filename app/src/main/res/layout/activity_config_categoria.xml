@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_dark"
-    tools:context=".features.admin.produtos.view.ConfiguracoesProdutosActivity">
+    tools:context=".features.admin.produtos.view.ConfigCategoriaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btnVoltarConfigProdutos"
+            android:id="@+id/btnVoltarConfig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -30,42 +30,37 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <Button
-        android:id="@+id/btnGerenciarPratos"
+    <TextView
+        android:id="@+id/textViewCategoriaTitulo"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="224dp"
-        android:backgroundTint="@color/blue"
-        android:text="Pratos"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="12dp"
+        android:text="PRATOS"
+        android:textColor="@color/white"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout" />
 
-    <Button
-        android:id="@+id/btnGerenciarSobremesas"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itensPorCategoriaRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/blue"
-        android:text="Sobremesas"
-        app:layout_constraintEnd_toEndOf="@+id/btnGerenciarPratos"
-        app:layout_constraintStart_toStartOf="@+id/btnGerenciarPratos"
-        app:layout_constraintTop_toBottomOf="@+id/btnGerenciarPratos" />
+        android:layout_height="0dp"
+        android:layout_margin="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCategoriaTitulo" />
 
-    <Button
-        android:id="@+id/btnGerenciarBebidas"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="32dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="36dp"
         android:backgroundTint="@color/blue"
-        android:text="Bebidas"
-        app:layout_constraintEnd_toEndOf="@+id/btnGerenciarSobremesas"
-        app:layout_constraintStart_toStartOf="@+id/btnGerenciarSobremesas"
-        app:layout_constraintTop_toBottomOf="@+id/btnGerenciarSobremesas" />
-
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

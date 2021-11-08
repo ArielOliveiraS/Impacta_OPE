@@ -26,7 +26,7 @@ class ItensPorCategoriaAdapter(var list: List<PedidoPorCategoria>, private val l
         holder.onBind(item)
 
         holder.itemView.setOnClickListener {
-            listener.onClick(item.id_produto_pk)
+            listener.onClick(item.id_produto_pk, item.produto, item.valor)
         }
     }
 

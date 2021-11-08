@@ -47,7 +47,7 @@ class PedidosPorCategoriaActivity : AppCompatActivity(), ClickPedidoViewContract
         }
     }
 
-    override fun onClick(produtoId: Int) {
+    override fun onClick(produtoId: Int, nomeProduto: String?, valorProduto: Float?) {
         val idPedido = intent.getIntExtra("ID_PEDIDO2", -1)
         val itemPedido = ItemPedido(idPedido, produtoId, 1)
         viewModelAdicionaItem.adicionarItem(itemPedido)

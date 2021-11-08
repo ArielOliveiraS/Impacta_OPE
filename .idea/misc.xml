@@ -5,10 +5,15 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.4066666666666667" />
         <entry key="app/src/main/res/drawable/bg_button.xml" value="0.41302083333333334" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.41302083333333334" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.4066666666666667" />
         <entry key="app/src/main/res/drawable/ic_restaurante.xml" value="0.19722222222222222" />
         <entry key="app/src/main/res/drawable/ic_seta.xml" value="0.41302083333333334" />
+        <entry key="app/src/main/res/layout/activity_adiciona_altera_produto.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_config_categoria.xml" value="0.26902173913043476" />
+        <entry key="app/src/main/res/layout/activity_config_pratos.xml" value="0.396875" />
         <entry key="app/src/main/res/layout/activity_configuracoes.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_configuracoes_produtos.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_consulta_mesas_abertas.xml" value="0.19300911854103345" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
