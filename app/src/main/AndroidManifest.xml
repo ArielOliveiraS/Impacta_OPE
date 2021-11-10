@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Opedarkgroup">
         <activity
+            android:name=".features.admin.funcionarios.view.AdicionaAlteraFuncionarioActivity"
+            android:exported="true" />
+        <activity
             android:name=".features.admin.produtos.view.AdicionaAlteraProdutoActivity"
             android:exported="true" />
         <activity
@@ -58,7 +61,7 @@
         </activity>
         <activity
             android:name=".features.login.view.LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -1,6 +1,5 @@
 package com.opedarkgroup.features.admin.produtos.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,10 +10,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.opedarkgroup.R
 import com.opedarkgroup.data.models.admin.adicionaproduto.AdicionaProdutoBody
 import com.opedarkgroup.data.models.admin.alteraproduto.AlteraProdutoBody
-import com.opedarkgroup.data.models.comanda.buscaprodutoporcategoria.CategoriaProduto
 import com.opedarkgroup.features.admin.produtos.viewmodel.AdicionaProdutoViewModel
 import com.opedarkgroup.features.admin.produtos.viewmodel.AlteraProdutoViewModel
-import com.opedarkgroup.features.comandaeletronica.listapedidos.viewmodel.BuscaProdutosViewModel
 import kotlinx.android.synthetic.main.activity_adiciona_altera_produto.*
 
 class AdicionaAlteraProdutoActivity : AppCompatActivity() {

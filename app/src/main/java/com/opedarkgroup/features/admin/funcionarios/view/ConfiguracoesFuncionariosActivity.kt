@@ -1,5 +1,6 @@
 package com.opedarkgroup.features.admin.funcionarios.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -35,6 +36,10 @@ class ConfiguracoesFuncionariosActivity : AppCompatActivity(), FuncionarioOnClic
         viewModel.buscaFuncionariosResult.observe(this, Observer {
             adapter.updateList(it)
         })
+
+        floatingActionButtonFuncionarios.setOnClickListener {
+            startActivity(Intent(this, AdicionaAlteraFuncionarioActivity::class.java))
+        }
     }
 
     override fun onClick(funcionariosResponse: BuscaFuncionariosResponse) {
