@@ -113,6 +113,7 @@ class ConfigCategoriaActivity : AppCompatActivity(), ClickPedidoViewContract {
                         with(dialog) {
                             if (produtoRemovido) {
                                 Toast.makeText(applicationContext, "Produto removido com sucesso!", Toast.LENGTH_SHORT).show()
+                                listaProdutos()
                                 dismiss()
                             } else {
                                 Toast.makeText(applicationContext, "Erro ao remover produto", Toast.LENGTH_SHORT).show()

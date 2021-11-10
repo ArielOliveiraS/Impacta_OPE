@@ -57,13 +57,13 @@ interface LoginApi {
     @POST("/AdmProduct/AlteraProduto")
     fun alteraProduto(@Body alteraProdutoBody: AlteraProdutoBody) : Completable
 
-    @POST("/AdmEmployee/AdicionaMesa")
+    @POST("/AdmTable/AdicionaMesa")
     fun adicionaMesa(@Body adicionaMesaBody: AdicionaMesaBody) : Completable
 
-    @POST("/AdmEmployee/RemoveMesa")
+    @POST("/AdmTable/RemoveMesa")
     fun removeMesa(@Body removeMesaBody: RemoveMesaBody) : Completable
 
-    @GET("/AdmEmployee/BuscaMesas")
+    @GET("/AdmTable/BuscaMesas")
     fun buscaTodasAsMesas() : Single<List<MesaResponse>>
 
 
