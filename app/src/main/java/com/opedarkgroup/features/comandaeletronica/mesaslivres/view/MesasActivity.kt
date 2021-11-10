@@ -22,15 +22,6 @@ class MesasActivity : AppCompatActivity(), ClickViewContract {
     private val list = listOf<MesaResponse>()
     lateinit var criaPedidoViewModel: CriaPedidoViewModel
 
-    val lista = listOf(
-        MesaResponse(1, 1, 4),
-        MesaResponse(2, 2, 4),
-        MesaResponse(3, 3, 4),
-        MesaResponse(4, 4, 4),
-        MesaResponse(5, 5, 5)
-    )
-
-
     private val adapter = MesasAdapter(list, this)
 
 
@@ -54,23 +45,18 @@ class MesasActivity : AppCompatActivity(), ClickViewContract {
     }
 
     override fun onClick(mesa: Int) {
-        var idPedido: Int = 0
         criaPedidoViewModel = ViewModelProviders.of(this).get(CriaPedidoViewModel::class.java)
 
         criaPedidoViewModel.criaPedido(CriaPedidoBody(mesa, 1))
         criaPedidoViewModel.criaPedidoResult.observe(this, Observer {
-            Log.i("teste", "viewmodel cria pedido observer")
-//           idPedido = it
-
             val intent = Intent(this, PedidosActivity::class.java)
-            var bundle = Bundle()
+            val bundle = Bundle()
 
             bundle.putInt("MESA", mesa)
             bundle.putInt("ID_PEDIDO", it)
             intent.putExtras(bundle)
 
             startActivity(intent)
-
         })
     }
 }

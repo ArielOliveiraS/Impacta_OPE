@@ -21,7 +21,7 @@
             android:name=".features.admin.mesas.ConfiuracoesMesasActivity"
             android:exported="true" />
         <activity
-            android:name=".features.admin.funcionarios.ConfiguracoesFuncionariosActivity"
+            android:name=".features.admin.funcionarios.view.ConfiguracoesFuncionariosActivity"
             android:exported="true" />
         <activity
             android:name=".features.admin.produtos.view.ConfiguracoesProdutosActivity"
