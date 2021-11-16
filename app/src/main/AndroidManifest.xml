@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Opedarkgroup">
         <activity
+            android:name=".features.admin.mesas.view.AdicionaMesaActivity"
+            android:exported="true" />
+        <activity
             android:name=".features.admin.funcionarios.view.AdicionaAlteraFuncionarioActivity"
             android:exported="true" />
         <activity
@@ -21,7 +24,7 @@
             android:name=".features.admin.produtos.view.ConfigCategoriaActivity"
             android:exported="true" />
         <activity
-            android:name=".features.admin.mesas.ConfiuracoesMesasActivity"
+            android:name=".features.admin.mesas.view.ConfiuracoesMesasActivity"
             android:exported="true" />
         <activity
             android:name=".features.admin.funcionarios.view.ConfiguracoesFuncionariosActivity"
@@ -61,7 +64,9 @@
         </activity>
         <activity
             android:name=".features.login.view.LoginActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
     </application>
 
 </manifest>

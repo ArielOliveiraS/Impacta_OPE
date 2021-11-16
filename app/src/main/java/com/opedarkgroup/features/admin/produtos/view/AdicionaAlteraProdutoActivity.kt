@@ -39,10 +39,11 @@ class AdicionaAlteraProdutoActivity : AppCompatActivity() {
 
             btnFinalizar.setOnClickListener {
                 val viewModel = ViewModelProviders.of(this).get(AlteraProdutoViewModel::class.java)
+                val nomeEditText = editNomeProduto.text.toString()
                 val valorEditText = editTextValorProduto.text.toString()
 
                 if (!valorEditText.isNullOrEmpty()) {
-                    viewModel.alteraProduto(AlteraProdutoBody(idProduto, valorEditText.toDouble()))
+                    viewModel.alteraProduto(AlteraProdutoBody(idProduto, valorEditText.toDouble(), nomeEditText))
                     viewModel.alteraProdutoResult.observe(this, Observer { produtoAlterado ->
                         if (produtoAlterado) {
                             Toast.makeText(applicationContext, "Produto alterado com sucesso!", Toast.LENGTH_SHORT).show()

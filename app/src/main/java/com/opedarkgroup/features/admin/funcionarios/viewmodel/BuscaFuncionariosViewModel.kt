@@ -1,4 +1,4 @@
-package com.opedarkgroup.features.admin.viewmodelsoltas
+package com.opedarkgroup.features.admin.funcionarios.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

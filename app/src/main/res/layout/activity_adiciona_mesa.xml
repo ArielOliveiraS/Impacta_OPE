@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_dark"
-    tools:context=".features.admin.funcionarios.view.AdicionaAlteraFuncionarioActivity">
+    tools:context=".features.admin.mesas.view.AdicionaMesaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -38,7 +38,7 @@
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="52dp"
         android:gravity="center"
-        android:text="Editar Funcionário"
+        android:text="Criar Mesas"
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,57 +60,47 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editNomeFuncionario"
+            <TextView
+                android:id="@+id/qtdeMesaTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="60dp"
-                android:hint="Nome"
-                android:textColorHint="@color/white"
+                android:text="Quantidade de mesas"
+                android:textSize="22dp"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextCategoriaProduto"
+                android:id="@+id/editTextQtdeMesa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:hint="User"
+                android:hint="Quantidade"
                 android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editNomeFuncionario" />
+                app:layout_constraintTop_toBottomOf="@+id/qtdeMesaTxt" />
 
-            <EditText
-                android:id="@+id/editTextEmailFuncionario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="16dp"
-                android:hint="Email"
-                android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextCategoriaProduto" />
 
             <Button
-                android:id="@+id/btnFinalizarFuncionario"
+                android:id="@+id/btnFinalizarMesa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/blue_dark"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="24dp"
-                android:text="Finalizar"
+                android:text="Adicionar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextEmailFuncionario" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextQtdeMesa" />
 
             <Button
-                android:id="@+id/btnCancelar"
+                android:id="@+id/btnCancelarMesa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -121,7 +111,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnFinalizarFuncionario" />
+                app:layout_constraintTop_toBottomOf="@+id/btnFinalizarMesa" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

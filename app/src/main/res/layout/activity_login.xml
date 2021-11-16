@@ -64,15 +64,24 @@
                 android:id="@+id/btnEntrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/blue_dark"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_dark"
                 android:text="Entrar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/senhaEditText" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/resetSenhaTextView"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="fygtuyhj"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/btnEntrar"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/btnEntrar"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

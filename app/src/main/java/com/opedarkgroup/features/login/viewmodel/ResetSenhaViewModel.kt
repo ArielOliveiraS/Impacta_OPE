@@ -1,27 +1,28 @@
-package com.opedarkgroup.features.admin.viewmodelsoltas
+package com.opedarkgroup.features.login.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.opedarkgroup.data.api.RetrofitService
-import com.opedarkgroup.data.models.comanda.buscamesas.MesaResponse
+import com.opedarkgroup.data.models.admin.resetsenha.ResetSenhaBody
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class BuscaMesasViewModel : ViewModel() {
+class ResetSenhaViewModel : ViewModel() {
 
     val disposable = CompositeDisposable()
-    val buscaTodasAsMesasResult: MutableLiveData<List<MesaResponse>> = MutableLiveData()
+    val resetSenhaResult: MutableLiveData<Boolean> = MutableLiveData()
     private val error: MutableLiveData<String> = MutableLiveData()
 
-    fun buscaTodasAsMesas() {
+    fun resetSenha(resetSenhaBody: ResetSenhaBody) {
         disposable.add(
-            RetrofitService.service.buscaTodasAsMesas()
+            RetrofitService.service.resetSenha(resetSenhaBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    buscaTodasAsMesasResult.value = it
+                    resetSenhaResult.value = true
                 }, { e ->
+                    resetSenhaResult.value = false
                     error.value = e.message
                 })
         )

@@ -1,28 +1,28 @@
-package com.opedarkgroup.features.admin.viewmodelsoltas
+package com.opedarkgroup.features.admin.funcionarios.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.opedarkgroup.data.api.RetrofitService
-import com.opedarkgroup.data.models.admin.adicionamesa.AdicionaMesaBody
+import com.opedarkgroup.data.models.admin.alterafuncionario.AlteraFuncionarioBody
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class AdicionaMesaViewModel : ViewModel() {
+class AlteraFuncionarioViewModel : ViewModel() {
 
     val disposable = CompositeDisposable()
-    val adicionaMesaResult: MutableLiveData<Boolean> = MutableLiveData()
+    val alteraFuncionarioResult: MutableLiveData<Boolean> = MutableLiveData()
     private val error: MutableLiveData<String> = MutableLiveData()
 
-    fun adicionaMesa(adicionaMesaBody: AdicionaMesaBody) {
+    fun alteraFuncionario(alteraFuncionarioBody: AlteraFuncionarioBody) {
         disposable.add(
-            RetrofitService.service.adicionaMesa(adicionaMesaBody)
+            RetrofitService.service.alteraFuncionario(alteraFuncionarioBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    adicionaMesaResult.value = true
+                    alteraFuncionarioResult.value = true
                 }, { e ->
-                    adicionaMesaResult.value = false
+                    alteraFuncionarioResult.value = false
                     error.value = e.message
                 })
         )

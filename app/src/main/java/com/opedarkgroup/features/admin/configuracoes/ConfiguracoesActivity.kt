@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.opedarkgroup.R
 import com.opedarkgroup.features.admin.funcionarios.view.ConfiguracoesFuncionariosActivity
-import com.opedarkgroup.features.admin.mesas.ConfiuracoesMesasActivity
+import com.opedarkgroup.features.admin.mesas.view.ConfiuracoesMesasActivity
 import com.opedarkgroup.features.admin.produtos.view.ConfiguracoesProdutosActivity
 import kotlinx.android.synthetic.main.activity_configuracoes.*
 
