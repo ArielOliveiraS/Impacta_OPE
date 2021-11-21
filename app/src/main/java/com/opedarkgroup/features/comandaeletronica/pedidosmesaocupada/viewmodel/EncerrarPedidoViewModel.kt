@@ -2,6 +2,7 @@ package com.opedarkgroup.features.comandaeletronica.pedidosmesaocupada.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.comanda.encerrarpedido.EncerrarPedidoBody
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +17,7 @@ class EncerrarPedidoViewModel : ViewModel(){
 
     fun encerrarPedido(encerrarPedidoBody: EncerrarPedidoBody) {
         disposable.add(
-            RetrofitService.service.encerrarPedido(encerrarPedidoBody)
+            RetrofitService.service.encerrarPedido(API_KEY, encerrarPedidoBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

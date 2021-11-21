@@ -2,6 +2,7 @@ package com.opedarkgroup.features.admin.funcionarios.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.admin.removefuncionario.RemoveFuncionarioBody
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +17,7 @@ class RemoveFuncionarioViewModel : ViewModel() {
 
     fun removeFuncionario(removeFuncionarioBody: RemoveFuncionarioBody) {
         disposable.add(
-            RetrofitService.service.removeFuncionario(removeFuncionarioBody)
+            RetrofitService.service.removeFuncionario(API_KEY, removeFuncionarioBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

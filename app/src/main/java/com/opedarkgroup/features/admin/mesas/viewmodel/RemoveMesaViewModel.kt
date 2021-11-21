@@ -2,6 +2,7 @@ package com.opedarkgroup.features.admin.mesas.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.admin.removemesa.RemoveMesaBody
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +17,7 @@ class RemoveMesaViewModel : ViewModel() {
 
     fun removeMesa(removeMesaBody: RemoveMesaBody) {
         disposable.add(
-            RetrofitService.service.removeMesa(removeMesaBody)
+            RetrofitService.service.removeMesa(API_KEY, removeMesaBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

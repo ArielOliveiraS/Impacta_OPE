@@ -2,6 +2,7 @@ package com.opedarkgroup.features.admin.mesas.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.admin.adicionamesa.AdicionaMesaBody
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +17,7 @@ class AdicionaMesaViewModel : ViewModel() {
 
     fun adicionaMesa(adicionaMesaBody: AdicionaMesaBody) {
         disposable.add(
-            RetrofitService.service.adicionaMesa(adicionaMesaBody)
+            RetrofitService.service.adicionaMesa(API_KEY, adicionaMesaBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

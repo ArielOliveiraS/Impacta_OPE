@@ -3,6 +3,7 @@ package com.opedarkgroup.features.comandaeletronica.listapedidos.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.comanda.ItemPedido
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -17,7 +18,7 @@ class AdicionaItemViewModel : ViewModel() {
 
     fun adicionarItem(itemPedido: ItemPedido) {
         disposable.add(
-            RetrofitService.service.adicionarItem(itemPedido)
+            RetrofitService.service.adicionarItem(API_KEY, itemPedido)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

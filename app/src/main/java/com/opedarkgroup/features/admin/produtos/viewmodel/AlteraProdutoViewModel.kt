@@ -2,6 +2,7 @@ package com.opedarkgroup.features.admin.produtos.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.admin.alteraproduto.AlteraProdutoBody
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +17,7 @@ class AlteraProdutoViewModel : ViewModel() {
 
     fun alteraProduto(alteraProdutoBody: AlteraProdutoBody) {
         disposable.add(
-            RetrofitService.service.alteraProduto(alteraProdutoBody)
+            RetrofitService.service.alteraProduto(API_KEY, alteraProdutoBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

@@ -2,6 +2,7 @@ package com.opedarkgroup.features.admin.funcionarios.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.admin.alterafuncionario.AlteraFuncionarioBody
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +17,7 @@ class AlteraFuncionarioViewModel : ViewModel() {
 
     fun alteraFuncionario(alteraFuncionarioBody: AlteraFuncionarioBody) {
         disposable.add(
-            RetrofitService.service.alteraFuncionario(alteraFuncionarioBody)
+            RetrofitService.service.alteraFuncionario(API_KEY, alteraFuncionarioBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

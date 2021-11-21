@@ -2,6 +2,7 @@ package com.opedarkgroup.features.admin.produtos.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.admin.adicionaproduto.AdicionaProdutoBody
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +17,7 @@ class AdicionaProdutoViewModel : ViewModel() {
 
     fun adicionaProduto(adicionaProdutoBody: AdicionaProdutoBody) {
         disposable.add(
-            RetrofitService.service.adicionaProduto(adicionaProdutoBody)
+            RetrofitService.service.adicionaProduto(API_KEY, adicionaProdutoBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
