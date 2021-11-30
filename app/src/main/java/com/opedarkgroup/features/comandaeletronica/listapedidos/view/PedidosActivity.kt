@@ -60,4 +60,8 @@ class PedidosActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onBackPressed() {
+        finish()
+    }
 }

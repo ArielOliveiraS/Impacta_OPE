@@ -74,4 +74,8 @@ class VisualizarComandaActivity : AppCompatActivity() {
             }
         })
     }
+
+    override fun onBackPressed() {
+        finish()
+    }
 }

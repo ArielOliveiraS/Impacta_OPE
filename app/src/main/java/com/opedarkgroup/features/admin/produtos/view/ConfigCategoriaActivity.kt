@@ -126,4 +126,8 @@ class ConfigCategoriaActivity : AppCompatActivity(), ClickPedidoViewContract {
         alert = builder.create()
         alert.show()
     }
+
+    override fun onBackPressed() {
+        finish()
+    }
 }

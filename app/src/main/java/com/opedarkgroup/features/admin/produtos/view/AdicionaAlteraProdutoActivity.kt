@@ -87,4 +87,8 @@ class AdicionaAlteraProdutoActivity : AppCompatActivity() {
             finish()
         }
     }
+
+    override fun onBackPressed() {
+        finish()
+    }
 }

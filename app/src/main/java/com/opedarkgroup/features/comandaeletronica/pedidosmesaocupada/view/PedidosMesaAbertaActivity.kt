@@ -77,4 +77,8 @@ class PedidosMesaAbertaActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
     }
+
+    override fun onBackPressed() {
+        finish()
+    }
 }

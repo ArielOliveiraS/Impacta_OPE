@@ -44,4 +44,8 @@ class AdicionaMesaActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onBackPressed() {
+        finish()
+    }
 }

@@ -61,4 +61,8 @@ class PedidosPorCategoriaActivity : AppCompatActivity(), ClickPedidoViewContract
             }
         })
     }
+
+    override fun onBackPressed() {
+        finish()
+    }
 }
