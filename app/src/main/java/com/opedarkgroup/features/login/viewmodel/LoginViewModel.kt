@@ -2,6 +2,7 @@ package com.opedarkgroup.features.login.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.login.LoginBody
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -17,7 +18,7 @@ class LoginViewModel : ViewModel() {
 
     fun getLogin(loginBody: LoginBody) {
         disposable.add(
-            RetrofitService.service.getLogin(loginBody)
+            RetrofitService.service.getLogin(API_KEY, loginBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

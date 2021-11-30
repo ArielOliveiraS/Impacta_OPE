@@ -12,35 +12,60 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Opedarkgroup">
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.pedidosmesaocupada.view.PedidosMesaAbertaActivity"
+            android:name=".features.admin.mesas.view.AdicionaMesaActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.comanda.view.VisualizarComandaActivity"
+            android:name=".features.admin.funcionarios.view.AdicionaAlteraFuncionarioActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.listapedidos.view.PedidosPorCategoriaActivity"
+            android:name=".features.admin.produtos.view.AdicionaAlteraProdutoActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.listapedidos.view.PedidosActivity"
+            android:name=".features.admin.produtos.view.ConfigCategoriaActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.mesasocupadas.view.ConsultaMesasAbertasActivity"
+            android:name=".features.admin.mesas.view.ConfiuracoesMesasActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.mesaslivres.view.MesasActivity"
+            android:name=".features.admin.funcionarios.view.ConfiguracoesFuncionariosActivity"
             android:exported="true" />
         <activity
-            android:name="com.opedarkgroup.features.comandaeletronica.home.view.MainActivity"
+            android:name=".features.admin.produtos.view.ConfiguracoesProdutosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.admin.configuracoes.ConfiguracoesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.comandaeletronica.pedidosmesaocupada.view.PedidosMesaAbertaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.comandaeletronica.comanda.view.VisualizarComandaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.comandaeletronica.listapedidos.view.PedidosPorCategoriaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.comandaeletronica.listapedidos.view.PedidosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.comandaeletronica.mesasocupadas.view.ConsultaMesasAbertasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.comandaeletronica.mesaslivres.view.MesasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".features.comandaeletronica.home.view.MainActivity"
             android:exported="true">
-        </activity>
-        <activity
-            android:name=".features.login.view.LoginActivity"
-            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".features.login.view.LoginActivity"
+            android:exported="true" >
+
         </activity>
     </application>
 

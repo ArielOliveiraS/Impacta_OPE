@@ -31,6 +31,7 @@ class VisualizarComandaActivity : AppCompatActivity() {
         btnEnviarComanda.setOnClickListener {
             enviarPedido()
         }
+        btnComandaVoltar.setOnClickListener { finish() }
     }
 
     private fun listarPedidos() {
@@ -72,5 +73,9 @@ class VisualizarComandaActivity : AppCompatActivity() {
                     .show()
             }
         })
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

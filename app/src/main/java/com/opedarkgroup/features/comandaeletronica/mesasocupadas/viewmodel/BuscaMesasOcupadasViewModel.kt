@@ -3,6 +3,7 @@ package com.opedarkgroup.features.comandaeletronica.mesasocupadas.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.comanda.buscamesas.MesaResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -17,7 +18,7 @@ class BuscaMesasOcupadasViewModel : ViewModel() {
 
     fun buscarMesasOcupadas() {
         disposable.add(
-            RetrofitService.service.buscarMesasOcupadas()
+            RetrofitService.service.buscarMesasOcupadas(API_KEY)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

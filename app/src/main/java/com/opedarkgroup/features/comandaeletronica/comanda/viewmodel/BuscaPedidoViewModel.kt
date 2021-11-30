@@ -2,6 +2,7 @@ package com.opedarkgroup.features.comandaeletronica.comanda.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.comanda.buscapedido.BuscaPedidoBody
 import com.opedarkgroup.data.models.comanda.buscapedido.BuscaPedidoResponse
@@ -17,7 +18,7 @@ class BuscaPedidoViewModel : ViewModel() {
 
     fun buscarPedido(buscaPedidoBody: BuscaPedidoBody) {
         disposable.add(
-            RetrofitService.service.buscarPedido(buscaPedidoBody)
+            RetrofitService.service.buscarPedido(API_KEY, buscaPedidoBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

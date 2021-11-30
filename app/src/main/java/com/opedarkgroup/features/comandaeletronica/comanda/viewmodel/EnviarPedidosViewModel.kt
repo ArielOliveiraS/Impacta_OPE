@@ -2,6 +2,7 @@ package com.opedarkgroup.features.comandaeletronica.comanda.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
 import com.opedarkgroup.data.models.comanda.enviarpedidos.EnviarPedidoBody
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +17,7 @@ class EnviarPedidosViewModel : ViewModel() {
 
     fun enviarPedido(enviarPedidoBody: EnviarPedidoBody) {
         disposable.add(
-            RetrofitService.service.enviarPedido(enviarPedidoBody)
+            RetrofitService.service.enviarPedido(API_KEY, enviarPedidoBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

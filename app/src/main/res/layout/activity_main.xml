@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
             android:layout_marginStart="8dp"
-            android:text="Selecionar Mesa"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -30,6 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:id="@+id/btnSair"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -47,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="224dp"
         android:backgroundTint="@color/blue"
         android:text="Mesas Livres"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,15 +58,26 @@
     <Button
         android:id="@+id/btnConsultarPedido"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
         android:layout_height="80dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/blue"
         android:text="Mesas Ocupadas"
         app:layout_constraintEnd_toEndOf="@+id/btnFazerPedido"
         app:layout_constraintStart_toStartOf="@+id/btnFazerPedido"
         app:layout_constraintTop_toBottomOf="@+id/btnFazerPedido" />
 
+    <Button
+        android:id="@+id/btnConfiguracoes"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/blue"
+        android:text="Administrativo"
+        app:layout_constraintEnd_toEndOf="@+id/btnConsultarPedido"
+        app:layout_constraintStart_toStartOf="@+id/btnConsultarPedido"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsultarPedido" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

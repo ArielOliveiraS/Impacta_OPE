@@ -1,28 +1,28 @@
-package com.opedarkgroup.features.admin.viewmodelsoltas
+package com.opedarkgroup.features.admin.mesas.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
-import com.opedarkgroup.data.models.admin.removeproduto.RemoveProdutoBody
+import com.opedarkgroup.data.models.comanda.buscamesas.MesaResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class RemoveProdutoViewModel : ViewModel() {
+class BuscaMesasViewModel : ViewModel() {
 
     val disposable = CompositeDisposable()
-    val removeProdutoResult: MutableLiveData<Boolean> = MutableLiveData()
+    val buscaTodasAsMesasResult: MutableLiveData<List<MesaResponse>> = MutableLiveData()
     private val error: MutableLiveData<String> = MutableLiveData()
 
-    fun removeProduto(removeProdutoBody: RemoveProdutoBody) {
+    fun buscaTodasAsMesas() {
         disposable.add(
-            RetrofitService.service.removeProduto(removeProdutoBody)
+            RetrofitService.service.buscaTodasAsMesas(API_KEY)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    removeProdutoResult.value = true
+                    buscaTodasAsMesasResult.value = it
                 }, { e ->
-                    removeProdutoResult.value = false
                     error.value = e.message
                 })
         )

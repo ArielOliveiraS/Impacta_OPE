@@ -1,28 +1,29 @@
-package com.opedarkgroup.features.admin.viewmodelsoltas
+package com.opedarkgroup.features.admin.produtos.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
-import com.opedarkgroup.data.models.admin.resetsenha.ResetSenhaBody
+import com.opedarkgroup.data.models.admin.adicionaproduto.AdicionaProdutoBody
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class ResetSenhaViewModel : ViewModel() {
+class AdicionaProdutoViewModel : ViewModel() {
 
     val disposable = CompositeDisposable()
-    val resetSenhaResult: MutableLiveData<Boolean> = MutableLiveData()
+    val adicionaProdutoResult: MutableLiveData<Boolean> = MutableLiveData()
     private val error: MutableLiveData<String> = MutableLiveData()
 
-    fun resetSenha(resetSenhaBody: ResetSenhaBody) {
+    fun adicionaProduto(adicionaProdutoBody: AdicionaProdutoBody) {
         disposable.add(
-            RetrofitService.service.resetSenha(resetSenhaBody)
+            RetrofitService.service.adicionaProduto(API_KEY, adicionaProdutoBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    resetSenhaResult.value = true
+                    adicionaProdutoResult.value = true
                 }, { e ->
-                    resetSenhaResult.value = false
+                    adicionaProdutoResult.value = false
                     error.value = e.message
                 })
         )

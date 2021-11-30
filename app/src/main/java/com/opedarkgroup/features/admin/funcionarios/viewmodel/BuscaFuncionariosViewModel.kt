@@ -1,26 +1,27 @@
-package com.opedarkgroup.features.admin.viewmodelsoltas
+package com.opedarkgroup.features.admin.funcionarios.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
-import com.opedarkgroup.data.models.comanda.buscamesas.MesaResponse
+import com.opedarkgroup.data.models.admin.buscafuncionarios.BuscaFuncionariosResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class BuscaMesasViewModel : ViewModel() {
+class BuscaFuncionariosViewModel : ViewModel() {
 
     val disposable = CompositeDisposable()
-    val buscaTodasAsMesasResult: MutableLiveData<List<MesaResponse>> = MutableLiveData()
+    val buscaFuncionariosResult: MutableLiveData<List<BuscaFuncionariosResponse>> = MutableLiveData()
     private val error: MutableLiveData<String> = MutableLiveData()
 
-    fun buscaTodasAsMesas() {
+    fun buscaFuncionarios() {
         disposable.add(
-            RetrofitService.service.buscaTodasAsMesas()
+            RetrofitService.service.buscaFuncionarios(API_KEY)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    buscaTodasAsMesasResult.value = it
+                    buscaFuncionariosResult.value = it
                 }, { e ->
                     error.value = e.message
                 })

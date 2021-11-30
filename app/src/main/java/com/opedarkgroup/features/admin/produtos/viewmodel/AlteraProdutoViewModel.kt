@@ -1,28 +1,29 @@
-package com.opedarkgroup.features.admin.viewmodelsoltas
+package com.opedarkgroup.features.admin.produtos.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.opedarkgroup.data.api.API_KEY
 import com.opedarkgroup.data.api.RetrofitService
-import com.opedarkgroup.data.models.admin.removefuncionario.RemoveFuncionarioBody
+import com.opedarkgroup.data.models.admin.alteraproduto.AlteraProdutoBody
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class RemoveFuncionarioViewModel : ViewModel() {
+class AlteraProdutoViewModel : ViewModel() {
 
     val disposable = CompositeDisposable()
-    val removeFuncionarioResult: MutableLiveData<Boolean> = MutableLiveData()
+    val alteraProdutoResult: MutableLiveData<Boolean> = MutableLiveData()
     private val error: MutableLiveData<String> = MutableLiveData()
 
-    fun removeFuncionario(removeFuncionarioBody: RemoveFuncionarioBody) {
+    fun alteraProduto(alteraProdutoBody: AlteraProdutoBody) {
         disposable.add(
-            RetrofitService.service.removeFuncionario(removeFuncionarioBody)
+            RetrofitService.service.alteraProduto(API_KEY, alteraProdutoBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    removeFuncionarioResult.value = true
+                    alteraProdutoResult.value = true
                 }, { e ->
-                    removeFuncionarioResult.value = false
+                    alteraProdutoResult.value = false
                     error.value = e.message
                 })
         )

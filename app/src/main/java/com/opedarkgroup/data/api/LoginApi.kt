@@ -27,78 +27,123 @@ import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
+
+const val API_KEY = "47E9C885476DB53CBDDE82E7475DA8C0B4D0DE91FE689088EEF509AD4886EAC7"
 
 interface LoginApi {
 
     //**************************************** ADMIN ***********************************//
 
     @POST("/AdmEmployee/CriaFuncionario")
-    fun criaFuncionario(@Body criaFuncionarioBody: CriaFuncionarioBody) : Completable
+    fun criaFuncionario(
+        @Header("ApiKey") ApiKey: String,
+        @Body criaFuncionarioBody: CriaFuncionarioBody
+    ): Completable
 
     @POST("/AdmEmployee/RemoveFuncionario")
-    fun removeFuncionario(@Body removeFuncionarioBody: RemoveFuncionarioBody) : Completable
+    fun removeFuncionario(
+        @Header("ApiKey") ApiKey: String,
+        @Body removeFuncionarioBody: RemoveFuncionarioBody
+    ): Completable
 
     @POST("/AdmEmployee/AlteraFuncionario")
-    fun alteraFuncionario(@Body alteraFuncionarioBody: AlteraFuncionarioBody) : Completable
+    fun alteraFuncionario(
+        @Header("ApiKey") ApiKey: String,
+        @Body alteraFuncionarioBody: AlteraFuncionarioBody
+    ): Completable
 
     @GET("/AdmEmployee/BuscaFuncionarios")
-    fun buscaFuncionarios() : Single<List<BuscaFuncionariosResponse>>
+    fun buscaFuncionarios(@Header("ApiKey") ApiKey: String): Single<List<BuscaFuncionariosResponse>>
 
     @POST("/AdmEmployee/ResetSenha")
-    fun resetSenha(@Body resetSenhaBody: ResetSenhaBody) : Completable
+    fun resetSenha(
+        @Header("ApiKey") ApiKey: String,
+        @Body resetSenhaBody: ResetSenhaBody
+    ): Completable
 
-    @POST("/AdmEmployee/AdicionaProduto")
-    fun adicionaProduto(@Body adicionaProdutoBody: AdicionaProdutoBody) : Completable
+    @POST("/AdmProduct/AdicionaProduto")
+    fun adicionaProduto(
+        @Header("ApiKey") ApiKey: String,
+        @Body adicionaProdutoBody: AdicionaProdutoBody
+    ): Completable
 
-    @POST("/AdmEmployee/RemoveProduto")
-    fun removeProduto(@Body removeProdutoBody: RemoveProdutoBody) : Completable
+    @POST("/AdmProduct/RemoveProduto")
+    fun removeProduto(
+        @Header("ApiKey") ApiKey: String,
+        @Body removeProdutoBody: RemoveProdutoBody
+    ): Completable
 
-    @POST("/AdmEmployee/AlteraProduto")
-    fun alteraProduto(@Body alteraProdutoBody: AlteraProdutoBody) : Completable
+    @POST("/AdmProduct/AlteraProduto")
+    fun alteraProduto(
+        @Header("ApiKey") ApiKey: String,
+        @Body alteraProdutoBody: AlteraProdutoBody
+    ): Completable
 
-    @POST("/AdmEmployee/AdicionaMesa")
-    fun adicionaMesa(@Body adicionaMesaBody: AdicionaMesaBody) : Completable
+    @POST("/AdmTable/AdicionaMesa")
+    fun adicionaMesa(
+        @Header("ApiKey") ApiKey: String,
+        @Body adicionaMesaBody: AdicionaMesaBody
+    ): Completable
 
-    @POST("/AdmEmployee/RemoveMesa")
-    fun removeMesa(@Body removeMesaBody: RemoveMesaBody) : Completable
+    @POST("/AdmTable/RemoveMesa")
+    fun removeMesa(
+        @Header("ApiKey") ApiKey: String,
+        @Body removeMesaBody: RemoveMesaBody
+    ): Completable
 
-    @GET("/AdmEmployee/BuscaMesas")
-    fun buscaTodasAsMesas() : Single<List<MesaResponse>>
+    @GET("/AdmTable/BuscaMesas")
+    fun buscaTodasAsMesas(@Header("ApiKey") ApiKey: String): Single<List<MesaResponse>>
 
 
     //*************************************** COMANDA **********************************//
 
     @POST("/Login/Login")
-    fun getLogin(@Body loginBody: LoginBody) : Single<LoginResponse>
+    fun getLogin(
+        @Header("ApiKey") ApiKey: String,
+        @Body loginBody: LoginBody
+    ): Single<LoginResponse>
 
     @POST("/Order/BuscaProduto")
-    fun buscarProdutos(@Body categoria: CategoriaProduto) : Single<List<PedidoPorCategoria>>
+    fun buscarProdutos(
+        @Header("ApiKey") ApiKey: String,
+        @Body categoria: CategoriaProduto
+    ): Single<List<PedidoPorCategoria>>
 
     @GET("/Order/BuscaMesasLivres")
-    fun buscarMesasLivres() : Single<List<MesaResponse>>
+    fun buscarMesasLivres(@Header("ApiKey") ApiKey: String): Single<List<MesaResponse>>
 
     @GET("/Order/BuscaMesasOcupadas")
-    fun buscarMesasOcupadas() : Single<List<MesaResponse>>
-
-    @POST("/Order/AlteraStatusMesa")
-    fun alterarStatusMesa(@Body mesaResponse: MesaResponse) : Completable
+    fun buscarMesasOcupadas(@Header("ApiKey") ApiKey: String): Single<List<MesaResponse>>
 
     @POST("/Order/BuscaPedido")
-    fun buscarPedido(@Body buscaPedidoBody: BuscaPedidoBody) : Single<BuscaPedidoResponse>
-
-    @POST("/Order/AlteraStatusPedido")
-    fun alterarStatusPedido(@Body pedidoResponse: PedidoResponse) : Completable
+    fun buscarPedido(
+        @Header("ApiKey") ApiKey: String,
+        @Body buscaPedidoBody: BuscaPedidoBody
+    ): Single<BuscaPedidoResponse>
 
     @POST("/Order/AdicionaItem")
-    fun adicionarItem(@Body itemResponse: ItemPedido) : Completable
+    fun adicionarItem(
+        @Header("ApiKey") ApiKey: String,
+        @Body itemResponse: ItemPedido
+    ): Completable
 
     @POST("/Order/EnviaPedido")
-    fun enviarPedido(@Body enviarPedidoBody: EnviarPedidoBody) : Completable
+    fun enviarPedido(
+        @Header("ApiKey") ApiKey: String,
+        @Body enviarPedidoBody: EnviarPedidoBody
+    ): Completable
 
     @POST("/Order/CriaPedido")
-    fun criaPedido(@Body criaPedidoBody: CriaPedidoBody) : Single<CriaPedidoResponse>
+    fun criaPedido(
+        @Header("ApiKey") ApiKey: String,
+        @Body criaPedidoBody: CriaPedidoBody
+    ): Single<CriaPedidoResponse>
 
     @POST("/Order/EncerraPedido")
-    fun encerrarPedido(@Body encerrarPedidoBody: EncerrarPedidoBody) : Completable
+    fun encerrarPedido(
+        @Header("ApiKey") ApiKey: String,
+        @Body encerrarPedidoBody: EncerrarPedidoBody
+    ): Completable
 }
