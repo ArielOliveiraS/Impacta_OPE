@@ -31,6 +31,7 @@ class VisualizarComandaActivity : AppCompatActivity() {
         btnEnviarComanda.setOnClickListener {
             enviarPedido()
         }
+        btnComandaVoltar.setOnClickListener { finish() }
     }
 
     private fun listarPedidos() {

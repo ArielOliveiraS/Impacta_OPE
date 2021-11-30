@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
             android:layout_marginStart="8dp"
-            android:text="Selecionar Mesa"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -30,6 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:id="@+id/btnSair"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"

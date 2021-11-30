@@ -3,6 +3,7 @@ package com.opedarkgroup.features.login.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SystemClock
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -40,6 +41,7 @@ class LoginActivity : AppCompatActivity() {
         val viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
 
         btnEntrar.setOnClickListener {
+            it.isClickable = false
             val user = usuarioEditText.text.toString()
             val password = senhaEditText.text.toString()
             viewModel.getLogin(LoginBody(user, password))
@@ -47,8 +49,10 @@ class LoginActivity : AppCompatActivity() {
             viewModel.loginResult.observe(this, Observer {
                 if (it) {
                     startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                    finish()
                 } else {
                     Toast.makeText(applicationContext, "Login ou senha incorretos", Toast.LENGTH_SHORT).show()
+                    btnEntrar.isClickable = true
                 }
             })
         }

@@ -20,6 +20,7 @@ import com.opedarkgroup.features.admin.produtos.view.*
 import kotlinx.android.synthetic.main.activity_configuracoes_funcionarios.*
 
 const val ALTERA_ADICIONA_FUNCIONARIO = "ALTERA_ADICIONA_FUNCIONARIO"
+const val ID_FUNCIONARIO = "ID_FUNCIONARIO"
 const val NOME = "NOME"
 const val USER = "USER"
 const val EMAIL = "EMAIL"
@@ -29,16 +30,17 @@ class ConfiguracoesFuncionariosActivity : AppCompatActivity(), FuncionarioOnClic
     private val list = listOf<BuscaFuncionariosResponse>()
     private val adapter = FuncionariosAdapter(list, this)
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configuracoes_funcionarios)
-        //listaFuncionarios()
         btnVoltarConfigFuncionarios.setOnClickListener {
             finish()
         }
         floatingActionButtonFuncionarios.setOnClickListener {
-            startActivity(Intent(this, AdicionaAlteraFuncionarioActivity::class.java))
+            val intent = Intent(this, AdicionaAlteraFuncionarioActivity::class.java)
+            intent.putExtra(ALTERA_ADICIONA_FUNCIONARIO, "Adiciona")
+            intent.putExtra(ID_FUNCIONARIO, "Adiciona")
+            startActivity(intent)
         }
     }
 
@@ -62,12 +64,13 @@ class ConfiguracoesFuncionariosActivity : AppCompatActivity(), FuncionarioOnClic
         })
     }
 
-    fun navegarParaAlterarFuncionario(nome: String?, user: String?, email: String?) {
+    fun navegarParaAlterarFuncionario(nome: String?, user: String?, email: String?, idFuncionario: Int) {
         val intent = Intent(this, AdicionaAlteraFuncionarioActivity::class.java)
         intent.putExtra(ALTERA_ADICIONA_FUNCIONARIO, "Altera")
         intent.putExtra(NOME, nome)
         intent.putExtra(USER, user)
         intent.putExtra(EMAIL, email)
+        intent.putExtra(ID_FUNCIONARIO, idFuncionario)
         startActivity(intent)
     }
 
@@ -79,7 +82,7 @@ class ConfiguracoesFuncionariosActivity : AppCompatActivity(), FuncionarioOnClic
             .setPositiveButton("Alterar",
                 DialogInterface.OnClickListener { dialog, id ->
                     with(funcionariosResponse) {
-                        navegarParaAlterarFuncionario(this.nome, this.usuario, this.email)
+                        navegarParaAlterarFuncionario(this.nome, this.usuario, this.email, this.id_funcionario_pk)
                     }
                 })
             .setNegativeButton("Excluir",
@@ -103,5 +106,9 @@ class ConfiguracoesFuncionariosActivity : AppCompatActivity(), FuncionarioOnClic
 
         alert = builder.create()
         alert.show()
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

@@ -74,7 +74,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextCategoriaProduto"
+                android:id="@+id/editTextUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -95,7 +95,7 @@
                 android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextCategoriaProduto" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextUser" />
 
             <Button
                 android:id="@+id/btnFinalizarFuncionario"

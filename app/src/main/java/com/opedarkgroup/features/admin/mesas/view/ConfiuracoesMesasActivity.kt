@@ -87,4 +87,7 @@ class ConfiuracoesMesasActivity : AppCompatActivity(), MesasConfigOnClick {
         alert.show()
     }
 
+    override fun onBackPressed() {
+        finish()
+    }
 }

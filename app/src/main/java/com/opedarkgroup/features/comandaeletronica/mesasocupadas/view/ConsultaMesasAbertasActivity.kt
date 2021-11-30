@@ -17,18 +17,7 @@ import kotlinx.android.synthetic.main.activity_consulta_mesas_abertas.*
 class ConsultaMesasAbertasActivity : AppCompatActivity(), ClickViewContract {
 
     private val list = listOf<MesaResponse>()
-
-    val lista = listOf(
-        MesaResponse(1, 1, 4),
-        MesaResponse(2, 2, 4),
-        MesaResponse(3, 3, 4),
-        MesaResponse(4, 4, 4),
-        MesaResponse(5, 5, 5)
-    )
-
-
     private val adapter = MesasAdapter(list, this)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,5 +42,9 @@ class ConsultaMesasAbertasActivity : AppCompatActivity(), ClickViewContract {
         val intent = Intent(this, PedidosMesaAbertaActivity::class.java)
         intent.putExtra("MESA", mesa)
         startActivity(intent)
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

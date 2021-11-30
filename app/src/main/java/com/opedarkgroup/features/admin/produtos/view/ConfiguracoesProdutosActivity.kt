@@ -35,4 +35,8 @@ class ConfiguracoesProdutosActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onBackPressed() {
+        finish()
+    }
 }

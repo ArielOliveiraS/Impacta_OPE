@@ -8,6 +8,7 @@ import com.opedarkgroup.features.admin.funcionarios.view.ConfiguracoesFuncionari
 import com.opedarkgroup.features.admin.mesas.view.ConfiuracoesMesasActivity
 import com.opedarkgroup.features.admin.produtos.view.ConfiguracoesProdutosActivity
 import kotlinx.android.synthetic.main.activity_configuracoes.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class ConfiguracoesActivity : AppCompatActivity() {
 
@@ -20,16 +21,29 @@ class ConfiguracoesActivity : AppCompatActivity() {
         }
 
         btnGerenciarFuncionarios.setOnClickListener {
+            it.isClickable = false
             startActivity(Intent(this, ConfiguracoesFuncionariosActivity::class.java))
         }
 
         btnGerenciarProdutos.setOnClickListener {
+            it.isClickable = false
             startActivity(Intent(this, ConfiguracoesProdutosActivity::class.java))
         }
 
         btnGerenciarMesas.setOnClickListener {
+            it.isClickable = false
             startActivity(Intent(this, ConfiuracoesMesasActivity::class.java))
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        btnGerenciarFuncionarios.isClickable = true
+        btnGerenciarProdutos.isClickable = true
+        btnGerenciarMesas.isClickable = true
+    }
+
+    override fun onBackPressed() {
+        finish()
+    }
 }
