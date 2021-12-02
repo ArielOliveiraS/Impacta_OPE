@@ -3,16 +3,13 @@ package com.opedarkgroup.features.login.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.opedarkgroup.features.comandaeletronica.home.view.MainActivity
 import com.opedarkgroup.R
-import com.opedarkgroup.data.models.admin.resetsenha.ResetSenhaBody
 import com.opedarkgroup.data.models.login.LoginBody
 import com.opedarkgroup.features.login.viewmodel.LoginViewModel
-import com.opedarkgroup.features.login.viewmodel.ResetSenhaViewModel
 import kotlinx.android.synthetic.main.activity_login.*
 
 //alan.esteves -> 1234
@@ -23,20 +20,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-//        resetSenhaTextView.setOnClickListener {
-//            val viewModel = ViewModelProviders.of(this).get(ResetSenhaViewModel::class.java)
-//
-////            viewModel.resetSenha(ResetSenhaBody())
-//
-//            viewModel.resetSenhaResult.observe(this, Observer {
-//                if (it) {
-//                    Toast.makeText(applicationContext, "Login ou senha incorretos", Toast.LENGTH_SHORT).show()
-//                } else {
-//                    Toast.makeText(applicationContext, "Login ou senha incorretos", Toast.LENGTH_SHORT).show()
-//                }
-//            })
-//
-//        }
+        resetSenhaTextView.setOnClickListener {
+            it.isClickable = false
+            startActivity(Intent(this, ResetSenhaActivity::class.java))
+        }
 
         val viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
 
@@ -56,5 +43,10 @@ class LoginActivity : AppCompatActivity() {
                 }
             })
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        resetSenhaTextView.isClickable = true
     }
 }

@@ -8,81 +8,75 @@
     android:backgroundTint="@color/blue_dark"
     tools:context=".features.login.view.LoginActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="192dp"
-        android:layout_height="187dp"
-        android:layout_marginTop="120dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_restaurante" />
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:layout_marginTop="34dp"
-        app:cardCornerRadius="10dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:backgroundTint="@color/blue"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/usuarioEditText"
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="60dp"
-                android:hint="Usuário"
-                android:textColorHint="@color/white"
+                android:text="Digite um email para receber sua nova senha"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/senhaEditText"
+                android:id="@+id/emailResetSenha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="16dp"
-                android:inputType="textPassword"
-                android:hint="Senha"
+                android:layout_marginTop="30dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
                 android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/usuarioEditText" />
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <Button
-                android:id="@+id/btnEntrar"
+                android:id="@+id/btnAlterarSenha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/blue_dark"
+                android:text="Alterar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailResetSenha" />
+
+            <Button
+                android:id="@+id/btnAlterarSenhaCancelar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/blue_dark"
-                android:text="Entrar"
+                android:text="Cancelar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/senhaEditText" />
-
-            <TextView
-                android:id="@+id/resetSenhaTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Esqueci minha senha"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/btnEntrar"
-                app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
+                app:layout_constraintTop_toBottomOf="@+id/btnAlterarSenha"
+                app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
