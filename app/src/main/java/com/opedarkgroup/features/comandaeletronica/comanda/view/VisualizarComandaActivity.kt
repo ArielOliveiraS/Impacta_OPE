@@ -49,9 +49,6 @@ class VisualizarComandaActivity : AppCompatActivity() {
             it.pedidoResponse?.itens?.let { listaPedidos ->
                 adapter.updateList(listaPedidos)
             }
-//            it.itens?.let { listaPedidos ->
-//                adapter.updateList(listaPedidos)
-//            }
         })
     }
 

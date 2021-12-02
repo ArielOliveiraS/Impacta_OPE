@@ -39,9 +39,9 @@ class AdicionaMesaActivity : AppCompatActivity() {
             }
         }
 
-        btnCancelarMesa.setOnClickListener {
-            finish()
-        }
+        btnCancelarMesa.setOnClickListener { finish() }
+
+        btnVoltarCriarMesas.setOnClickListener { finish() }
 
     }
 

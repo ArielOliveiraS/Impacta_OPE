@@ -33,6 +33,8 @@ class AdicionaAlteraFuncionarioActivity : AppCompatActivity() {
         setContentView(R.layout.activity_adiciona_altera_funcionario)
         val viewModel = ViewModelProviders.of(this).get(CriaFuncionarioViewModel::class.java)
 
+        btnVoltarAdicionaAlteraFuncionario.setOnClickListener { finish() }
+
         procedimento = intent.getStringExtra(ALTERA_ADICIONA_FUNCIONARIO).toString()
         nome = intent.getStringExtra(NOME).toString()
         user = intent.getStringExtra(USER).toString()

@@ -20,6 +20,7 @@ class AdicionaAlteraProdutoActivity : AppCompatActivity() {
     var valorProduto = 0.0F
     var procedimento = ""
     var idProduto = 0
+    var categoria = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,11 +30,12 @@ class AdicionaAlteraProdutoActivity : AppCompatActivity() {
         nomeProduto = intent.getStringExtra(NOME_PRODUTO).toString()
         valorProduto = intent.getFloatExtra(VALOR_PRODUTO, 0.0F)
         idProduto = intent.getIntExtra(ID_PRODUTO, -1)
+        categoria = intent.getStringExtra(CATEGORIA).toString()
 
 
 
         if (procedimento == "Altera") {
-            editTextCategoriaProduto.visibility = View.GONE
+            //editTextCategoriaProduto.visibility = View.GONE
             editNomeProduto.setText(nomeProduto, TextView.BufferType.EDITABLE)
             editTextValorProduto.setText(valorProduto.toString(), TextView.BufferType.EDITABLE)
 
@@ -65,10 +67,10 @@ class AdicionaAlteraProdutoActivity : AppCompatActivity() {
 
                 val nomeEditText = editNomeProduto.text.toString()
                 val valorEditText = editTextValorProduto.text.toString()
-                val categoriaEditText = editTextCategoriaProduto.text.toString()
 
-                if (!valorEditText.isNullOrEmpty() && !nomeEditText.isNullOrEmpty() && !categoriaEditText.isNullOrEmpty()) {
-                    viewModel.adicionaProduto(AdicionaProdutoBody(nomeEditText,categoriaEditText, valorEditText.toFloat()))
+
+                if (!valorEditText.isNullOrEmpty() && !nomeEditText.isNullOrEmpty() ) {
+                    viewModel.adicionaProduto(AdicionaProdutoBody(nomeEditText, categoria, valorEditText.toFloat()))
                     viewModel.adicionaProdutoResult.observe(this, Observer { produtoAdicionado ->
                         if (produtoAdicionado) {
                             Toast.makeText(applicationContext, "Produto adicionado com sucesso!", Toast.LENGTH_SHORT).show()
@@ -82,10 +84,8 @@ class AdicionaAlteraProdutoActivity : AppCompatActivity() {
             }
         }
 
-
-        btnCancelar.setOnClickListener {
-            finish()
-        }
+        btnCancelar.setOnClickListener { finish() }
+        btnVoltarAdicionaAlteraProdutos.setOnClickListener { finish() }
     }
 
     override fun onBackPressed() {

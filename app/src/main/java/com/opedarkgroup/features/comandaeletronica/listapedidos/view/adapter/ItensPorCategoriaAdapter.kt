@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.opedarkgroup.R
 import com.opedarkgroup.data.models.comanda.buscaprodutoporcategoria.PedidoPorCategoria
 import kotlinx.android.synthetic.main.item_por_categoria.view.*
+import java.text.NumberFormat
 
 class ItensPorCategoriaAdapter(var list: List<PedidoPorCategoria>, private val listener: ClickPedidoViewContract):
     RecyclerView.Adapter<ItensPorCategoriaAdapter.ViewHolder>(){
@@ -40,8 +41,11 @@ class ItensPorCategoriaAdapter(var list: List<PedidoPorCategoria>, private val l
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun onBind(item: PedidoPorCategoria) {
+            val valorFormatado =NumberFormat.getCurrencyInstance()
+            val valor = valorFormatado.format(item.valor)
+
             itemView.nomeProduto.text = item.produto
-            itemView.valorProduto.text =  "R$: ${item.valor}"
+            itemView.valorProduto.text =  valor.toString()
         }
     }
 }

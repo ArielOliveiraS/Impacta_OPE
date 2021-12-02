@@ -24,6 +24,7 @@ const val ALTERA_ADICIONA_PRODUTO = "ALTERA_ADICIONA_PRODUTO"
 const val NOME_PRODUTO = "NOME_PRODUTO"
 const val VALOR_PRODUTO = "VALOR_PRODUTO"
 const val ID_PRODUTO = "ID_PRODUTO"
+const val CATEGORIA = "CATEGORIA"
 
 class ConfigCategoriaActivity : AppCompatActivity(), ClickPedidoViewContract {
 
@@ -35,7 +36,7 @@ class ConfigCategoriaActivity : AppCompatActivity(), ClickPedidoViewContract {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_config_categoria)
 
-        btnVoltarConfig.setOnClickListener {
+        btnVoltarConfigCategoria.setOnClickListener {
             finish()
         }
 
@@ -59,6 +60,7 @@ class ConfigCategoriaActivity : AppCompatActivity(), ClickPedidoViewContract {
         floatingActionButton.setOnClickListener {
             val intent = Intent(this, AdicionaAlteraProdutoActivity::class.java)
             intent.putExtra(ALTERA_ADICIONA_PRODUTO, "Adiciona")
+            intent.putExtra(CATEGORIA, categoria)
             startActivity(intent)
         }
     }

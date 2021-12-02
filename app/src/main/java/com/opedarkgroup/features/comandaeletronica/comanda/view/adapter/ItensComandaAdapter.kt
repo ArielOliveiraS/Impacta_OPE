@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.opedarkgroup.R
 import com.opedarkgroup.data.models.comanda.buscapedido.BuscaPedidoItemResponse
 import kotlinx.android.synthetic.main.item_pedido_adicionado.view.*
+import java.text.NumberFormat
 
 class ItensComandaAdapter(var list: List<BuscaPedidoItemResponse>):
     RecyclerView.Adapter<ItensComandaAdapter.ViewHolder>(){
@@ -35,8 +36,11 @@ class ItensComandaAdapter(var list: List<BuscaPedidoItemResponse>):
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun onBind(itemPedido: BuscaPedidoItemResponse) {
+            val valorFormatado = NumberFormat.getCurrencyInstance()
+            val valor = valorFormatado.format(itemPedido.valor)
+
             itemView.nomeProduto.text = itemPedido.nomeProduto
-            itemView.valorProduto.text = itemPedido.valor.toString()
+            itemView.valorProduto.text = valor.toString()
         }
     }
 }
